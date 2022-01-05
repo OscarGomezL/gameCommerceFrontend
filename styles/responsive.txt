@@ -1,0 +1,25 @@
+✓
+header
+	-desktop
+		-landscape ✓
+	-ipad
+		-landscape ✓
+		-portrait ✓
+	-mobile
+		-landscape ✓
+		-portrait ✓
+	-miniMobile
+		-landscape ✓
+		-portrait ✓
+footer
+	-desktop
+		-landscape
+	-ipad
+		-landscape
+		-portrait
+	-mobile
+		-landscape
+		-portrait
+	-miniMobile
+		-landscape
+		-portrait

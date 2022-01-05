@@ -1,0 +1,78 @@
+.gameSearcher {
+	border: none;
+	border-bottom: 2px solid rgb(200,140,50);
+	color: #432;
+	margin-right: 9%;
+	background: rgb(230,178,77);
+}
+.searchIcon {
+	margin: 0 8px;
+	width: 6%;
+	color: #432;
+}
+.gameSearcher::selection {
+	background: rgb(200,140,50);
+}
+.gameSearcher::placeholder {
+	color: #432;
+}
+/*responsive classes*/
+
+.input-portrait-gameSearcher {
+	position: absolute;
+	margin-top: -1000px;
+}
+
+/*desktop landscape*/
+@media screen and (min-width: 1300px)  {
+	.gameSearcher {
+		width: 23%;
+		height: 50%;
+		margin-left: 10px;
+		padding: 10px 5px;
+		font-size: 1.2rem;
+	}	
+	.searchIcon {
+		width: 1.5%;
+	}
+}
+
+/*ipad portrait*/
+@media screen and (min-width: 768px) and (max-width: 1299px)  {
+	.searchIcon {
+		margin: 0 4px;
+		width: 4.3%;
+	}
+}
+
+/*mini mobile portrait*/
+@media screen and (max-width: 320px)  {
+	.searchIcon {
+		margin: 0 8px;
+		width: 6%;
+	}
+}
+
+/*mobile landscape*/
+@media screen and (max-height: 540px) and (min-width: 568px) {	
+	.searchIcon {
+		margin: 0 4px;
+		width: 2.5%;
+	}
+}
+
+/*miniMobile landscape*/
+@media screen and (max-height: 320px) and (min-width: 568px)  {
+	.searchIcon {
+		margin: 0 4px;
+		width: 3%;
+	}
+}
+
+/*ipad/landscape tablets landscape*/
+@media screen and (max-height: 1024px) and (min-width: 1000px) and (max-width: 1400px) {
+	.searchIcon {
+		margin: 0 4px;
+		width: 2.7%;
+	}
+}

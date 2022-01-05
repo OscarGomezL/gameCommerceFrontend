@@ -1,0 +1,11 @@
+el input va a tener una clase diferente para mobile que para 
+desktop y posiblemente landscape.
+
+.input-landscape-gameSearcher
+.input-portrait-gameSearcher
+
+Mobile
+	Se va a mantener el ícono y cuando le haga click lo que va a pasar es que llama al input como un menú hamburguesa, en el cual puede buscar su
+	juego.
+Desktop
+	El input siempre va a estar visible sin más, como cualquier input normal.
