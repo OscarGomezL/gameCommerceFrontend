@@ -1,0 +1,53 @@
+.menu {
+	z-index: 1000;
+	width: 100vw;
+	height: 100vh;
+	background: rgb(230,178,77);
+}
+.menu-container {
+	display: flex;
+	user-select: none;
+	margin-top: -22vh;
+	position: absolute;
+	transition: all .3s ease;
+}
+
+/*desktop landscape*/
+@media screen and (min-width: 1300px)  {
+	.menu-container {
+		margin-top: -17vh;
+	}
+	.menu {
+		width: 30vw;
+		height: 100vh;
+		transition: all .3s ease;
+	}
+	.menu-screen {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		opacity: 0.5;
+		background: black;
+	}
+}
+
+/*general landscape*/
+@media screen and (min-width: 568px)  {}
+
+/*mini iPad portrait*/
+@media screen and (min-width: 540px) and (max-width: 1000px)  {}
+
+/*big iPad*/
+@media screen and (min-width: 1000px) and (max-width: 1299px){}
+
+/*mini mobile portrait*/
+@media screen and (max-width: 320px)  {}
+
+/*mobile landscape*/
+@media screen and (max-height: 540px) and (min-width: 568px) {}
+
+/*miniMobile landscape*/
+@media screen and (max-height: 320px) and (min-width: 568px)  {}
+
+/*ipad landscape*/
+@media screen and (max-height: 1024px) and (min-width: 1000px) and (max-width: 1400px){}

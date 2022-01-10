@@ -2,6 +2,7 @@ import Header from "./Header"
 import Head from 'next/head'
 import Footer from "./Footer"
 import Nav from "./Nav"
+import Menu from './Menu/Menu'
 
 export default function Layout({children}) {
 	return (
@@ -18,6 +19,7 @@ export default function Layout({children}) {
 			<Header />
 			<Nav/>
 			<div className="content">
+				<Menu/>
 				{children}
 			</div>
 			<Footer />

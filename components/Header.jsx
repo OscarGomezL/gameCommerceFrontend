@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Image from 'next/image'
 import src from '../public/headerIcon.png'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faSearch, faEllipsisV} from '@fortawesome/free-solid-svg-icons'
+import {faSearch, faBars} from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
 	const [mobile, setMobile] = useState(false)
@@ -42,9 +42,14 @@ export default function Header() {
 				className='gameSearcher'
 			/>
 			<FontAwesomeIcon 
-				icon={faEllipsisV}
+				icon={faBars}
 				className='menuIcon'
-				onClick={()=>{console.log(mobile);}}
+				onClick={() => {
+					let menu = document.querySelector('.menu') 
+					let screen = document.querySelector('.menu-screen')	
+					menu.classList.toggle('active')
+					screen.classList.toggle('active')
+				}}
 			/>
 		</header>
 	)

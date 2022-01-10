@@ -1,6 +1,7 @@
 .layout {
 	width: 100vw;
 	height: 100vh;
+	background: black;
 }
 .content {
 	background: rgb(255,205,97);

@@ -1,5 +1,6 @@
 .menuIcon {
 	margin: 0 8px;
+	z-index: 100;
 	height: 30%;
 	width: 3.5%;
 	color: #432;
@@ -11,6 +12,7 @@
 	.menuIcon {
 		width: 3.5%;
 		color: #432;
+		margin-left: 10.6%;
 	}
 }
 

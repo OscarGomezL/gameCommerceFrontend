@@ -1,7 +1,7 @@
 *, *::before, *::after {
 	font-family: 'Roboto Slab', serif;
 	box-sizing: border-box;
-  }
+	}
   * {
 	margin: 0;
   }

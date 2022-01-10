@@ -19,9 +19,11 @@ nav {
 	text-decoration: none;
 }
 .nav-link-container a {
+	user-select: none;
 	color: #321;
 }
 .nav-platforms-container a {
+	user-select: none;
 	color: #feb;
 }
 
