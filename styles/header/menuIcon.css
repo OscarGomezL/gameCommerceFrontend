@@ -1,8 +1,7 @@
 .menuIcon {
 	margin: 0 8px;
-	z-index: 100;
 	height: 30%;
-	width: 3.5%;
+	width: 5%;
 	color: #432;
 	cursor: pointer;
 }
@@ -16,32 +15,59 @@
 	}
 }
 
-/*ipad portrait*/
-@media screen and (min-width: 768px) and (max-width: 1299px)  {}
+/*ipad portrait*//* iPads (portrait) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
+	.menuIcon {
+		width: 5%;
+		height: 100%;
+	}
+}
 
 /*mini mobile portrait*/
-@media screen and (max-width: 300px)  {
+@media screen and (max-width: 320px)  {
 	.menuIcon {
-		width: 2.5%;
+		width: 4%;
+		height: 60%;
 		color: #432;
+		margin: 0 2px;
 	}
 }
 
 /*mobile landscape*/
 @media screen and (max-height: 540px) and (min-width: 568px) {
 	.menuIcon {
-		height: 50%;
-		width: 1%;
+		margin: 0;
+		height: 100%;
+		width: 2%;
 	}
 }
 
 /*miniMobile landscape*/
 @media screen and (max-height: 320px) and (min-width: 568px)  {
 	.menuIcon {
-		height: 50%;
-		width: 1%;
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		width: 3%;
 	}
 }
 
 /*ipad/landscape tablets landscape*/
-@media screen and (max-height: 600px) and (min-width: 1000px) {}
+@media screen and (max-height: 600px) and (min-width: 1000px) {
+	.menuIcon {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		width: 2%;
+	}
+}
+
+/*big iPad*/
+@media screen and (min-width: 1000px) and (max-width: 1400px){
+	.menuIcon {
+		margin: 0 10px;
+		padding: 0;
+		height: 100%;
+		width: 3%;
+	}
+}

@@ -2,7 +2,9 @@
 	border: none;
 	border-bottom: 2px solid rgb(200,140,50);
 	color: #432;
-	margin-right: 9%;
+	height: 7vh;
+	transition: all .3s ease;
+	width: 80vw;
 	background: rgb(230,178,77);
 }
 .searchIcon {
@@ -19,8 +21,10 @@
 /*responsive classes*/
 
 .input-portrait-gameSearcher {
+	margin-top: 40vh;
+	margin-left: 10vw;
+	z-index: 1000;
 	position: absolute;
-	margin-top: -1000px;
 }
 
 /*desktop landscape*/
@@ -28,6 +32,7 @@
 	.gameSearcher {
 		width: 23%;
 		height: 50%;
+		margin-right: 9%;
 		margin-left: 10px;
 		padding: 10px 5px;
 		font-size: 1.2rem;
@@ -37,8 +42,8 @@
 	}
 }
 
-/*ipad portrait*/
-@media screen and (min-width: 768px) and (max-width: 1299px)  {
+/*ipad portrait*//* iPads (portrait) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
 	.searchIcon {
 		margin: 0 4px;
 		width: 4.3%;
@@ -49,15 +54,15 @@
 @media screen and (max-width: 320px)  {
 	.searchIcon {
 		margin: 0 8px;
-		width: 6%;
+		width: 5%;
 	}
 }
 
 /*mobile landscape*/
 @media screen and (max-height: 540px) and (min-width: 568px) {	
 	.searchIcon {
-		margin: 0 4px;
-		width: 2.5%;
+		width: 2%;
+		height: 100%;
 	}
 }
 
@@ -73,6 +78,6 @@
 @media screen and (max-height: 1024px) and (min-width: 1000px) and (max-width: 1400px) {
 	.searchIcon {
 		margin: 0 4px;
-		width: 2.7%;
+		width: 2%;
 	}
 }

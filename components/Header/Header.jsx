@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from 'react'
 import Image from 'next/image'
-import src from '../public/headerIcon.png'
+import src from '../../public/headerIcon.png'
+import Searcher from './Searcher'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faSearch, faBars} from '@fortawesome/free-solid-svg-icons'
+import {faBars} from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
-	const [mobile, setMobile] = useState(false)
 	const addClass = (divClass, newClass) => {
 		document.querySelector(`.${divClass}`).classList.add(`${newClass}`)
 		}
 	const checkDevice = () => {
 		if(screen.width<1299) {
 			addClass('gameSearcher','input-portrait-gameSearcher')
-			setMobile(true)
+			addClass('gameSearcher','active')
 		}
 	}
 	useEffect(() => {
@@ -31,16 +31,7 @@ export default function Header() {
 			<div className='titleContainer'>
 				<div className='title'>GameCommerce</div>
 			</div>
-			<FontAwesomeIcon 
-				icon={faSearch}
-				className='searchIcon'
-				onClick={()=>{console.log(mobile);}}
-			/>
-			<input 
-				type="text"
-				placeholder='Search a game'
-				className='gameSearcher'
-			/>
+			<Searcher/>
 			<FontAwesomeIcon 
 				icon={faBars}
 				className='menuIcon'
