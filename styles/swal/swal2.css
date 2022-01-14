@@ -1,0 +1,23 @@
+.swal2-input {
+	color: #432 !important;
+	border: 2px solid #432 !important;
+}
+.swal2-input::placeholder {
+	color: #432 !important;
+}
+.swal2-input:focus {
+	box-shadow: none !important;
+	border: 2px solid #765 !important ;
+}
+.swal2-confirm {
+	border: 2px solid #432 !important;
+	color: #432 !important;
+}
+.swal2-default-outline:focus {
+	box-shadow: none !important;
+	border: none !important;
+	border: 2px solid #765 !important ;
+}
+.swal2-html-container {
+	margin: 0 !important;
+}

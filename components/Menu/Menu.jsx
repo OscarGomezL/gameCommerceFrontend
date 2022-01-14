@@ -2,9 +2,9 @@ import Logged from './Logged'
 import Unlogged from './Unlogged'
 
 export default function Menu() {
-	let content;
+	let accountContent;
 	let logged = false
-	logged ? content = <Logged/> : content = <Unlogged/>
+	logged ? accountContent = <Logged/> : accountContent = <Unlogged/>
 	const revertModals = () => {
 		document.querySelector('.menu').classList.add('active')
 		document.querySelector('.menu-screen').classList.add('active')
@@ -13,16 +13,13 @@ export default function Menu() {
 			document.querySelector('.input-portrait-gameSearcher').classList.add('active')	
 		}
 	}
+	// <div onClick={revertModals}>XD</div>
 	return (
 		<div className="menu-container">
 			<div className='menu active'>
-				{content}
-				<div onClick={revertModals}>XD</div>
+				{accountContent}
 			</div>
-			<div 
-				className="menu-screen active"
-				onClick={revertModals}
-			/>
+			<div className="menu-screen active" onClick={revertModals}/>
 		</div>
 	)
 }

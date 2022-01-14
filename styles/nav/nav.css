@@ -26,7 +26,15 @@ nav {
 	user-select: none;
 	color: #feb;
 }
-
+.my-account-container {
+	color: #321;
+	height: 30%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgb(180,130,45);
+	user-select: none;
+}
 /*desktop landscape*/
 @media screen and (min-width: 1300px)  {
 }
@@ -38,7 +46,7 @@ nav {
 		height: 5%;
 	}
 	.nav-container {
-		width: 50%;
+		width: 40%;
 		height: 100%;
 	}
 	.nav-container a {
@@ -49,6 +57,9 @@ nav {
 	}
 	.nav-link-container  {
 		justify-content: flex-end;
+	}
+	.my-account-container {
+		width: 10%;
 	}
 }
 
@@ -62,7 +73,11 @@ nav {
 @media screen and (max-width: 320px)  {}
 
 /*mobile landscape*/
-@media screen and (max-height: 540px) and (min-width: 568px) {}
+@media screen and (max-height: 540px) and (min-width: 568px) {
+	.my-account-container {
+		width: 20%;
+	}
+}
 
 /*miniMobile landscape*/
 @media screen and (max-height: 320px) and (min-width: 568px)  {}

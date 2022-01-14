@@ -1,0 +1,20 @@
+.swal-overlay {
+	background: #0009;
+}
+.swal-modal {
+	background: rgb(230,178,77);
+}
+.swal-title::selection, .swal-text::selection {
+	background: rgb(200,140,50);
+}
+.swal-button {
+	background: rgb(230,178,77);
+	border: 2px solid #432;
+	color: #432;
+}
+.swal-button:hover {
+	background: red;
+}
+.swal-button--cancel:not([disabled]):hover , .swal-button:not([disabled]):hover{
+	background: rgb(210,158,57);
+}

@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import MyAccount from './MyAccount'
+
 export default function Nav() {
 	return (
 		<nav>
@@ -36,6 +38,7 @@ export default function Nav() {
 					</a>
 				</Link>
 			</div>
+			<MyAccount/>
 		</nav>
 	)
 }

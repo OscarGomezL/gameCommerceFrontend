@@ -1,7 +1,7 @@
 import Header from "./Header/Header"
 import Head from 'next/head'
 import Footer from "./Footer"
-import Nav from "./Nav"
+import Nav from "./Nav/Nav"
 import Menu from './Menu/Menu'
 
 export default function Layout({children}) {

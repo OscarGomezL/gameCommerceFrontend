@@ -1,7 +1,9 @@
 export default function Unlogged() {
 	return (
-		<div>
-			Unlogged			
+		<div className="account-space">
+			<div className="account-name">
+				Name Example
+			</div>
 		</div>
 	)
 }

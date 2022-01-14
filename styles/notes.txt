@@ -9,3 +9,18 @@ Mobile
 	juego.
 Desktop
 	El input siempre va a estar visible sin más, como cualquier input normal.
+
+content : {
+									element: "input",
+									attributes : {
+										placeholder: "Name",
+										type: "text"
+									}
+								},
+								content : {
+									element: "input",
+									attributes : {
+										placeholder: "User",
+										type: "text"
+									}
+								}

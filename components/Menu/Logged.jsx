@@ -1,6 +1,6 @@
 export default function Logged() {
 	return (
-		<div>
+		<div className="account-space">
 			Logged			
 		</div>
 	)
