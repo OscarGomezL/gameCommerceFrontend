@@ -7,7 +7,8 @@
 }
 .swal2-input:focus {
 	box-shadow: none !important;
-	border: 2px solid #765 !important ;
+	outline: 2px solid #321 !important;
+	border: 2px solid #321 !important ;
 }
 .swal2-confirm {
 	border: 2px solid #432 !important;
@@ -15,9 +16,17 @@
 }
 .swal2-default-outline:focus {
 	box-shadow: none !important;
-	border: none !important;
-	border: 2px solid #765 !important ;
+	border: 2px solid #321 !important;
+	outline: 2px solid #321 !important;
 }
 .swal2-html-container {
 	margin: 0 !important;
+}
+#register-swal-input-submit:hover {
+	background: rgb(200,140,50);
+	cursor: pointer;
+}
+#login-swal-input-submit:hover {
+	background: rgb(200,140,50);
+	cursor: pointer;
 }

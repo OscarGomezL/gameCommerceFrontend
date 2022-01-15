@@ -1,17 +1,3 @@
-const {value: formValues} = await swal({
-  title: 'Multiple inputs',
-  html:
-    '<input id="swal-input1" class="swal2-input">' +
-    '<input id="swal-input2" class="swal2-input">',
-  focusConfirm: false,
-  preConfirm: () => {
-    return [
-      document.getElementById('swal-input1').value,
-      document.getElementById('swal-input2').value
-    ]
-  }
-})
-
-if (formValues) {
-  swal(JSON.stringify(formValues))
-}
+Voy a hacer el backend XD, cuando vuelva tengo que recordar
+frontend/components/Nav/MyAccount.jsx
+ahí llega la data

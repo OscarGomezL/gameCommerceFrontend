@@ -9,6 +9,7 @@
 }
 .swal-button {
 	background: rgb(230,178,77);
+	user-select: none;
 	border: 2px solid #432;
 	color: #432;
 }
@@ -17,4 +18,8 @@
 }
 .swal-button--cancel:not([disabled]):hover , .swal-button:not([disabled]):hover{
 	background: rgb(210,158,57);
+}
+.swal-button:focus {
+	box-shadow: none;
+	outline: 2px solid #321;
 }
