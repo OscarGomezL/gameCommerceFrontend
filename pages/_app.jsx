@@ -10,6 +10,9 @@ import '../styles/menu/account.css'
 import '../styles/layout.css'
 import '../styles/swal/swal1.css'
 import '../styles/swal/swal2.css'
+import '../styles/swal/custom.css'
+import '../styles/main/content.css'
+import '../styles/main/main.css'
 
 export default function MyApp({ Component, pageProps }) {
 	return <Component {...pageProps} />

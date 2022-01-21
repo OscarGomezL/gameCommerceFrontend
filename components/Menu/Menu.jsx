@@ -6,12 +6,8 @@ export default function Menu() {
 	let logged = false
 	logged ? accountContent = <Logged/> : accountContent = <Unlogged/>
 	const revertModals = () => {
-		document.querySelector('.menu').classList.add('active')
-		document.querySelector('.menu-screen').classList.add('active')
-		// non-desktop modals
-		if(screen.width<1299) {
-			document.querySelector('.input-portrait-gameSearcher').classList.add('active')	
-		}
+		document.querySelector('.menu').classList.toggle('active')
+		document.querySelector('.menu-screen').classList.toggle('active')
 	}
 	// <div onClick={revertModals}>XD</div>
 	return (

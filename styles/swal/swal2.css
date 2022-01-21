@@ -30,3 +30,6 @@
 	background: rgb(200,140,50);
 	cursor: pointer;
 }
+.swal2-html-container {
+	font-size: 1rem !important;
+}

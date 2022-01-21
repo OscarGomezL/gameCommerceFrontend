@@ -4,18 +4,11 @@
 .invisible {
 	opacity: 0 !important;
 }
-.home {
+.page {
 	width: 100vw;
 	height: 100vh;
-	background: black;
-}
-.menu-screen {
-	position: absolute;
-	width: 100vw;
-	height: 100vh;
-	opacity: 0.2;
 	background: black;
 }
 .active {
-	margin-left: -5000px !important;
+	margin-left: -1900px !important;
 }

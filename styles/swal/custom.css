@@ -1,0 +1,16 @@
+.swal2-input-custom {
+	color: #432;
+	background: rgb(230,178,77);
+	border: 2px solid #432;
+	padding: 10px;
+}
+.swal2-input-custom::placeholder {
+	color: #432;
+}
+.test-button {
+	position: absolute;
+	margin-top: 1000px;
+	width: 100px;
+	height: 100px;
+	background: red;
+}

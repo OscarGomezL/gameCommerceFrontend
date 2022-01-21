@@ -4,8 +4,9 @@ import src from '../../public/headerIcon.png'
 import Searcher from './Searcher'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from '@fortawesome/free-solid-svg-icons'
+import Menu from '../Menu/Menu'
 
-export default function Header() {
+export default function Header({children}) {
 	const addClass = (divClass, newClass) => {
 		document.querySelector(`.${divClass}`).classList.add(`${newClass}`)
 		}
@@ -20,6 +21,7 @@ export default function Header() {
 	}, [])
 	return (
 		<header>
+			<Menu/>
 			<div className='imageContainer'>
 				<Image
 					src={src}

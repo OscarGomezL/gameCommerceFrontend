@@ -9,8 +9,36 @@
 	height: 67%;
 }
 
-@media screen and (min-width: 568px)  { 
+/*General Landscape*/
+@media only screen and (orientation: landscape) {
 	.content {
 		height: 77%;
 	}
 }
+
+/*General Portrait*/
+@media only screen and (orientation: portrait) {}
+
+/* Smartphones (landscape) */
+@media only screen and (min-width : 321px) {}
+ 
+/* Mini Mobiles (portrait)  */
+@media only screen and (max-width : 320px) {}
+ 
+/* Mini Mobiles (landscape)  */
+@media only screen and (max-height: 320px) and (orientation: landscape) {}
+
+/* iPads (portrait and landscape) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) {}
+ 
+/* iPads (landscape) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {}
+ 
+/* iPads (portrait) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {}
+ 
+/* Desktops and Laptops */
+@media only screen and (min-width : 1224px) {}
+ 
+/* Extra-large screens */
+@media only screen and (min-width : 1824px) {}

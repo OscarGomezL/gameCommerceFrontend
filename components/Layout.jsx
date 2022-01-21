@@ -2,9 +2,9 @@ import Header from "./Header/Header"
 import Head from 'next/head'
 import Footer from "./Footer"
 import Nav from "./Nav/Nav"
-import Menu from './Menu/Menu'
 
-export default function Layout({children}) {
+export default function Layout({children, singlePage}) {
+	const isSinglePage = singlePage ? "singlePage" : "";
 	return (
 		<div className="layout">
 			<Head>
@@ -16,10 +16,9 @@ export default function Layout({children}) {
 				/>
 				<title>gameCommerce</title>
 			</Head>
-			<Header />
+			<Header/>
 			<Nav/>
-			<div className="content">
-				<Menu/>
+			<div className={`content ${isSinglePage}`}>
 				{children}
 			</div>
 			<Footer />
