@@ -13,6 +13,7 @@ import '../styles/swal/swal2.css'
 import '../styles/swal/custom.css'
 import '../styles/main/content.css'
 import '../styles/main/main.css'
+import '../styles/main/home.css'
 
 export default function MyApp({ Component, pageProps }) {
 	return <Component {...pageProps} />

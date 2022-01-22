@@ -10,15 +10,6 @@ export default function Header({children}) {
 	const addClass = (divClass, newClass) => {
 		document.querySelector(`.${divClass}`).classList.add(`${newClass}`)
 		}
-	const checkDevice = () => {
-		if(screen.width<1299) {
-			addClass('gameSearcher','input-portrait-gameSearcher')
-			addClass('gameSearcher','active')
-		}
-	}
-	useEffect(() => {
-		checkDevice()
-	}, [])
 	return (
 		<header>
 			<Menu/>
@@ -31,7 +22,7 @@ export default function Header({children}) {
 				/>
 			</div>
 			<div className='titleContainer'>
-				<div className='title'>GameCommerce</div>
+				<h1 className='title'>GameCommerce</h1>
 			</div>
 			<Searcher/>
 			<FontAwesomeIcon 

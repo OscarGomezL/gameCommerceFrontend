@@ -1,7 +1,10 @@
 .gameSearcher {
+	visibility: hidden;
 	border: none;
 	border-bottom: 2px solid rgb(200,140,50);
 	color: #432;
+	position: absolute;
+	margin-left: -5000px;
 	height: 7vh;
 	transition: all .3s ease;
 	width: 80vw;
@@ -20,12 +23,6 @@
 }
 /*responsive classes*/
 
-.input-portrait-gameSearcher {
-	margin-top: 50vh;
-	margin-left: 10vw;
-	z-index: 1000;
-	position: absolute;
-}
 .gameSearcher-screen {
 	position: absolute;
 	height: 100vh;
@@ -42,6 +39,8 @@
 	.gameSearcher {
 		width: 23%;
 		height: 50%;
+		visibility: visible;
+		position: initial;
 		margin-right: 9%;
 		margin-left: 10px;
 		padding: 10px 5px;

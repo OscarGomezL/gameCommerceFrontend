@@ -5,7 +5,8 @@ export default function Home() {
 		<div className='page'>
 			<Layout singlePage={true}>
 				<main>
-					<h1>Important Warning</h1>
+					<h2>Important Warning</h2>
+					<p></p>
 				</main>
 			</Layout>
 		</div>
