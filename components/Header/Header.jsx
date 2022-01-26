@@ -6,10 +6,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from '@fortawesome/free-solid-svg-icons'
 import Menu from '../Menu/Menu'
 
-export default function Header({children}) {
-	const addClass = (divClass, newClass) => {
-		document.querySelector(`.${divClass}`).classList.add(`${newClass}`)
-		}
+export default function Header({needsSearcher}) {
 	return (
 		<header>
 			<Menu/>
@@ -24,10 +21,10 @@ export default function Header({children}) {
 			<div className='titleContainer'>
 				<h1 className='title'>GameCommerce</h1>
 			</div>
-			<Searcher/>
+			<Searcher needsSearcher={needsSearcher}/>
 			<FontAwesomeIcon 
 				icon={faBars}
-				className='menuIcon'
+				className={`menuIcon ${needsSearcher}`}
 				onClick={() => {
 					let menu = document.querySelector('.menu') 
 					let screen = document.querySelector('.menu-screen')	
