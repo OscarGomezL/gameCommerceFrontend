@@ -1,3 +1,0 @@
-Voy a hacer el backend XD, cuando vuelva tengo que recordar
-frontend/components/Nav/MyAccount.jsx
-ahí llega la data

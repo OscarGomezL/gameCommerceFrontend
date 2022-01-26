@@ -41,16 +41,36 @@ export default function MyAccount() {
 			confirmButtonColor: "rgb(230,178,77)",
 		}).then(data=>{
 			if(data.value){
-				Swal2.fire({
-					title:'Congratulations your account has been successfully created',
-					text: "You can refresh the page and you should be able to login from this account",
-					background: "rgb(230,178,77)",
-					confirmButtonColor: "rgb(230,178,77)",
-					color: "#432",
-					icon: "success",
-					iconColor: "#432",
+				data.value.gamesCart = []
+				data.value.directions = []
+				fetch("http://localhost:4000/v1/user/signup", {
+					method: "POST",
+					body: JSON.stringify(data.value),
+					headers: {"Content-type": "application/json"}
+				}).then(response=>response.json()).then(data=>{
+					if(!data.message) {
+						Swal2.fire({
+							title:'Congratulations your account has been successfully created',
+							text: "You should now be able to login from the account you registered",
+							background: "rgb(230,178,77)",
+							confirmButtonColor: "rgb(230,178,77)",
+							color: "#432",
+							icon: "success",
+							iconColor: "#432",
+						})
+					}
+					else {
+						Swal2.fire({
+							title:'The email you tried to register is already signed up',
+							text: "Try to login with that email instead",
+							background: "rgb(230,178,77)",
+							confirmButtonColor: "rgb(230,178,77)",
+							color: "#432",
+							icon: "error",
+							iconColor: "#432",
+						})
+					}
 				})
-
 			}
 		})
 	}
@@ -66,7 +86,6 @@ export default function MyAccount() {
 			confirmButtonColor: "rgb(230,178,77)",
 			preConfirm: function() {
 				return new Promise((res,rej) =>{
-
 					const validateLoginField = (idNum, placeholder, email) => {
 						let inputValue = document.getElementById(`login-swal-input-${idNum}`).value
 						if(inputValue){
@@ -81,6 +100,37 @@ export default function MyAccount() {
 						password: validateLoginField(2,"Password", false),
 						email: validateLoginField(1, "Email", true)
 					})
+				})
+			}
+		}).then(data=>{
+			if(data.value) {
+				fetch("http://localhost:4000/v1/user/signin", {
+					method: "POST",
+					body: JSON.stringify(data.value),
+					headers: {"Content-type": "application/json"}
+				}).then(response=>response.json()).then(data=>{
+					if(!data.user) {
+						Swal2.fire({
+							title: data.message,
+							text: "Try to login again",
+							background: "rgb(230,178,77)",
+							confirmButtonColor: "rgb(230,178,77)",
+							color: "#432",
+							icon: "error",
+							iconColor: "#432",
+						})
+					}
+					else {
+						Swal2.fire({
+							title: "Congratulations!",
+							text: `You are now logged in as ${data.user.username}`,
+							background: "rgb(230,178,77)",
+							confirmButtonColor: "rgb(230,178,77)",
+							color: "#432",
+							icon: "success",
+							iconColor: "#432",
+						})
+					}
 				})
 			}
 		})
