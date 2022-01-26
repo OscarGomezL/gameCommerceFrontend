@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Footer from "./Footer"
 import Nav from "./Nav/Nav"
 
-export default function Layout({children, singlePage, ds}) {
+export default function Layout({children, singlePage, ds, needsSearcher}) {
 	const isSinglePage = singlePage ? "singlePage" : "";
 	const isDs = ds ? "content-ds": ""
 	return (
@@ -17,7 +17,7 @@ export default function Layout({children, singlePage, ds}) {
 				/>
 				<title>GameCommerce</title>
 			</Head>
-			<Header/>
+			<Header needsSearcher={needsSearcher}/>
 			<Nav/>
 			<div className={`content ${isDs} ${isSinglePage}`}>
 				{children}
