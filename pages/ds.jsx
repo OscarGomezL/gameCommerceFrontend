@@ -16,7 +16,7 @@ export default function DS({data}) {
 	}
 	return (
 		<div className='page'>
-			<Layout ds={true}>
+			<Layout ds={true} needsSearcher={true}>
 			{
 					data.games.map(game=>{
 						if(game.console=="Ds"){
@@ -46,6 +46,5 @@ export default function DS({data}) {
 export async function getStaticProps() {
 	const response = await fetch("http://localhost:4000/v1/games")
 	const data = await response.json()
-	console.log(data)
 	return {props: {data}}
 }
