@@ -56,12 +56,17 @@
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {}
  
 /* iPads (portrait) */
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {}
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
+	.swal2-html-container {
+		font-size: 1.25rem !important;
+		padding: 50px !important;
+	}
+}
  
 /* Desktops and Laptops */
 @media only screen and (min-width : 1224px) {
 	.swal2-html-container {
-		font-size: 1.6rem !important;
+		font-size: 1.25rem !important;
 		padding: 50px !important;
 	}
 }
