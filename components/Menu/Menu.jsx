@@ -1,19 +1,14 @@
-import Logged from './Logged'
-import Unlogged from './Unlogged'
+import MenuContent from './MenuContent'
 
 export default function Menu() {
-	let accountContent;
-	let logged = false
-	logged ? accountContent = <Logged/> : accountContent = <Unlogged/>
 	const revertModals = () => {
 		document.querySelector('.menu').classList.toggle('active')
 		document.querySelector('.menu-screen').classList.toggle('active')
 	}
-	// <div onClick={revertModals}>XD</div>
 	return (
 		<div className="menu-container">
 			<div className='menu active'>
-				{accountContent}
+				<MenuContent/>
 			</div>
 			<div className="menu-screen active" onClick={revertModals}/>
 		</div>

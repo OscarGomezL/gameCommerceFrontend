@@ -10,7 +10,11 @@
 	position: absolute;
 	margin-top: 88vh;
 }
-
+.menu-content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
 /*General Landscape*/
 @media only screen and (orientation: landscape) {
 	.menu {

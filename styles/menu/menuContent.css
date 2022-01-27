@@ -1,0 +1,74 @@
+.menu-content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.ico-container {
+	width: 100%;
+	height: 5%;
+	padding-left: 10px;
+	padding-top: 5px;
+	border-bottom: 2px solid #432;
+}
+.account-container {
+	width: 100%;
+	height: 15%;
+	border-bottom: 2px solid #432;
+}
+.link-container {
+	width: 100%;
+	height: 47.5%;
+	border-bottom: 2px solid #432;
+	display: flex;
+	flex-wrap: wrap;
+}
+.link-container a {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	height: 25%;
+	text-decoration: none;
+}
+.link-container a div {
+	font-size: 1.2rem;
+	margin-left: 10px;
+	color: #210;
+}
+.link-container a div svg{
+	margin-right: 10px;
+}
+
+.link-container a:hover{
+	background: rgb(200,140,50);
+}
+.more-container {
+	width: 100%;
+	height: 32.5%;
+	display: flex;
+	flex-wrap: wrap;
+	border-bottom: 2px solid #432;
+
+}
+.more-container a {
+	text-decoration: none;
+	color: #210;
+	font-size: 1.4rem;
+	padding-left: 10px;
+	width: 100%;
+	height: 50%;
+	display: flex;
+	align-items: center;
+}
+.more-container a div {
+	display: flex;
+	flex-wrap: wrap;
+}
+.more-container a div img {
+	margin-right: 10px;
+	width: 50px;
+	height: 50px;
+}
+.more-container a:hover {
+	background: rgb(200,140,50);
+}
