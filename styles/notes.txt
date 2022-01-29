@@ -1,15 +1,12 @@
-				<Link href="/">
-					<a className='link-home'>
-						Home
-					</a>
-				</Link>
-				<Link href="/about">
-					<a className='link-about'>
-						About
-					</a>
-				</Link>
-				<Link href="/contact-us">
-					<a className='link-contact'>
-						Contact
-					</a>
-				</Link>
+frontend
+	-ciertos problemas al seleccionar texto
+	-el usuario debe permanecer logeado mediante local storage
+	-tiene que haber una manera de no permitir al usuario hacer ciertas cosas a no ser que esté registrado
+	-poner datos de la cuenta del usuario en el menú desplegable
+	-poner el debido texto en contact, home y about
+backend
+	-debo hacer refactor del seeder de algunos juegos, puesto que algunas descripciones son o bien malas
+	o incompletas o tienen cosas de wikipedia XDD
+	-algunas cosas de seguridad y encriptado que no están del todo hechas, como el auth.middleware
+stripe
+	TODO XD
