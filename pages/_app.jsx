@@ -1,3 +1,6 @@
+import { useMemo, useState, useEffect } from 'react'
+import AuthContext from '../context/AuthContext'
+//css
 import '../styles/reset.css'
 import '../styles/global.css'
 import '../styles/header/header.css'
@@ -17,5 +20,38 @@ import '../styles/main/main.css'
 import '../styles/main/home.css'
 
 export default function MyApp({ Component, pageProps }) {
-	return <Component {...pageProps} />
+	const [auth, setAuth] = useState(undefined)
+	const [mustReload, setMustReload] = useState(undefined)
+	useEffect(() => {
+		const isLogged = localStorage.getItem("User")
+		if(isLogged) {
+			setAuth(JSON.parse(isLogged))
+		}
+		else {
+			setAuth(null)
+		}
+		console.log('Called')
+	}, []);
+	const dataPatch = mod => {
+		localStorage.setItem("User",JSON.stringify(mod))
+		setAuth(mod)
+	}
+	const dataDelete = () => {
+		localStorage.removeItem("User")
+		setAuth(null)
+	}
+	const authData = useMemo(
+		()=>({
+			auth,
+			dataPatch,
+			dataDelete,
+		}),
+		[auth]
+	)
+	if(auth === undefined) return null
+	return (
+		<AuthContext.Provider value={authData}>
+			<Component {...pageProps} />
+		</AuthContext.Provider>
+	)
 }
