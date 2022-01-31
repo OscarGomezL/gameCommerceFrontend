@@ -1,3 +1,5 @@
+import { useEffect, useState, useContext} from 'react'
+import AuthContext from '../../context/AuthContext'
 import Link from 'next/link'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faAddressBook, faBars, faHome, faIdCard, faShoppingCart} from '@fortawesome/free-solid-svg-icons'
@@ -7,6 +9,18 @@ export default function MenuContent() {
 		document.querySelector('.menu').classList.toggle('active')
 		document.querySelector('.menu-screen').classList.toggle('active')
 	}
+	const [data, setData] = useState()
+	const getData = async() => {
+		const res = await fetch("http://localhost:4000/v1/link/readAll")
+		const data = await res.json()
+		setData(data)
+	}
+	const {auth, dataPatch} = useContext(AuthContext)
+	useEffect(() => {
+		getData()
+		console.log(auth)
+	}, []);
+	
 	return (
   		<div className='menu-content'>
 			<div className='ico-container'>
@@ -17,7 +31,9 @@ export default function MenuContent() {
 				/>
 			</div>
 			<div className='account-container'>
-				Account
+				Your Account:<br/>
+				{auth ? "Username: " + auth.user.username : "You have not logged in yet"}<br/>
+				{auth ? "Email: " + auth.user.email : ""}
 			</div>
 			<div className='link-container'>
 				<Link href="/">
@@ -54,16 +70,16 @@ export default function MenuContent() {
 				</Link>
 			</div>
 			<div className='more-container'>
-				<a href="https://betterambience-1.web.app/" target="_blank">
+				<a href={data ? data[0].link : ""} target="_blank">
 					<div>
-						<img src="https://i.imgur.com/CiSmn0s.png"/>
-						betterAmbience
+						<img src={data ? data[0].logo : ""}/>
+						{data ? data[0].name : ""}
 					</div>
 				</a>
-				<a href="https://daysbetween-2.web.app/" target="_blank">
+				<a href={data ? data[1].link : ""} target="_blank">
 					<div>
-						<img src="https://daysbetween-2.web.app/static/media/theIcon.5363db2f.png" />
-						daysBetween
+						<img src={data ? data[1].logo : ""} />
+						{data ? data[1].name : ""}
 					</div>	
 				</a>
 			</div>
