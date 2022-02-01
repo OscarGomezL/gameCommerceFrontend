@@ -1,9 +1,13 @@
 *, *::before, *::after {
 	font-family: 'Roboto Slab', serif;
 	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
 	}
   * {
 	margin: 0;
+  }
+  *:focus {
+	-webkit-tap-highlight-color: transparent;
   }
   textarea:focus, input:focus {
 	  outline: none;

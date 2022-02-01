@@ -18,6 +18,9 @@ nav {
 	margin: 0 8px;
 	text-decoration: none;
 }
+.nav-platforms-container{
+	justify-content: space-evenly;
+}
 .nav-platforms-container a {
 	user-select: none;
 	color: #feb;
@@ -25,6 +28,7 @@ nav {
 .my-account-container {
 	color: #321;
 	height: 40%;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -66,9 +70,9 @@ nav {
 @media only screen and (orientation: portrait) {}
 
 /* Smartphones (landscape) */
-@media only screen and (min-width : 321px) {
+@media only screen and (min-width : 321px) and (orientation: landscape) {
 	.my-account-container {
-		width: 100%;
+		width: 50%;
 	}
 }
  
