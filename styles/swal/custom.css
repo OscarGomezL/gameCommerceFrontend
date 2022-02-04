@@ -14,3 +14,9 @@
 	height: 100px;
 	background: red;
 }
+#suggestion-swal-input {
+	width: 80%;
+}
+#bug-swal-input {
+	width: 80%;
+}

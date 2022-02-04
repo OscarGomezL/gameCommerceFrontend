@@ -11,17 +11,9 @@
 	padding-top: 5px;
 	border-bottom: 2px solid #432;
 }
-.account-container {
-	font-size: 1.1rem;
-	padding-left: 10px;
-	padding-top: 10px;
-	width: 100%;
-	height: 15%;
-	border-bottom: 2px solid #432;
-}
 .link-container {
 	width: 100%;
-	height: 57.5%;
+	height: 95%;
 	border-bottom: 2px solid #432;
 	display: flex;
 	flex-wrap: wrap;
@@ -30,12 +22,14 @@
 	width: 100%;
 	display: flex;
 	align-items: center;
-	height: 25%;
+	height: 11.1%;
+	cursor: pointer;
 	text-decoration: none;
 }
 .link-container a div {
 	font-size: 1.2rem;
 	margin-left: 10px;
+	cursor: pointer;
 	color: #210;
 }
 .link-container a div svg{
@@ -43,35 +37,6 @@
 }
 
 .link-container a:hover{
-	background: rgb(200,140,50);
-}
-.more-container {
-	width: 100%;
-	height: 22.5%;
-	display: flex;
-	flex-wrap: wrap;
-	border-bottom: 2px solid #432;
-}
-.more-container a {
-	text-decoration: none;
-	color: #210;
-	font-size: 1.2rem;
-	padding-left: 10px;
-	width: 100%;
-	height: 50%;
-	display: flex;
-	align-items: center;
-}
-.more-container a div {
-	display: flex;
-	flex-wrap: wrap;
-}
-.more-container a div img {
-	margin-right: 10px;
-	width: 10vw;
-	height: 10vw;
-}
-.more-container a:hover {
 	background: rgb(200,140,50);
 }
 /*General Landscape*/
@@ -87,11 +52,6 @@
 		margin-left: 10px;
 		color: #210;
 	}
-	.account-container {
-		font-size: 1rem;
-		height: 25%;
-		margin: 0;
-	}
 	.ico-container {
 		border: 0px;
 		visibility: hidden;
@@ -101,27 +61,6 @@
 	}
 	.link-container {
 		height: 50%;
-	}
-	.more-container {
-		width: 100%;
-		height: 25%;
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.more-container a div img {
-		margin-right: 10px;
-		width: 25px;
-		height: 25px;
-	}
-	.more-container a {
-		text-decoration: none;
-		color: #210;
-		font-size: 1rem;
-		padding-left: 10px;
-		width: 100%;
-		height: 50%;
-		display: flex;
-		align-items: center;
 	}
 }
 /* Mini Mobiles (portrait)  */
@@ -135,11 +74,6 @@
  
 /* iPads (landscape) */
 @media only screen and (min-height : 768px) and (max-height : 1024px) and (orientation : landscape) {
-	.account-container {
-		font-size: 1.2rem;
-		height: 15%;
-		margin: 0;
-	}
 	.link-container {
 		height: 60%;
 	}
@@ -147,42 +81,21 @@
 		font-size: 1.3rem;
 		color: #210;
 	}
-	.more-container a {
-		font-size: 1.3rem;
-	}
-	.more-container a div img {
-		width: 35px;
-		height: 35px;
-	}
 }
  
 /* iPads (portrait) */
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {}
  
 /* Desktops and Laptops */
-@media only screen and (min-width : 1224px) and (orientation: landscape){
+@media only screen and (min-width : 1224px){
 	.ico-container {
-		border-bottom: 2px solid #432;
-		visibility: visible;
-		height: 5%;
-		padding-top: 7px;
-	}
-	.account-container {
-		font-size: 1.3rem;
-		height: 15%;
-		margin: 0;
-		padding-top: 10px;
+		border-bottom: 0px solid #432;
+		visibility: hidden;
+		height: 0;
+		padding-top: 0;
 	}
 	.link-container {
-		height: 55%;
-	}
-	.more-container a {
-		font-size: 1.3rem;
-	}
-	.more-container a div img {
-		margin-right: 10px;
-		width: 40px;
-		height: 40px;
+		height: 100%;
 	}
 	.link-container a div {
 		font-size: 1.3rem;

@@ -30,8 +30,12 @@
 	background: rgb(200,140,50);
 	cursor: pointer;
 }
-.swal2-html-container {
+#swal2-html-container {
+	padding: 20px 50px !important;
 	font-size: 1rem !important;
+}
+#swal2-html-container p {
+	font-size: 1.4rem !important;
 }
 
 /*General Landscape*/
