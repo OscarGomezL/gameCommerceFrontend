@@ -26,7 +26,7 @@ export default function MenuContent() {
 						</div>
 					</a>
 				</Link>
-				<Link href="/contact">
+				<Link href="/contact-developer">
 					<a>
 						<div>
 							<FontAwesomeIcon icon={faAddressBook}/>

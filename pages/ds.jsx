@@ -4,7 +4,7 @@ import WithReactContent from 'sweetalert2-react-content'
 
 export default function DS({data}) {
 	const Swal2 = WithReactContent(NonReactSwal)
-	const GameSwal = (title, console, desc, img) => {
+	const GameSwal = (title, console, desc) => {
 		Swal2.fire({
 			title: title + "<br/>" + console,
 			text: desc,
@@ -12,6 +12,9 @@ export default function DS({data}) {
 			background: "rgb(230,178,77)",
 			confirmButtonText: "Add to Cart",
 			confirmButtonColor: "rgb(230,178,77)",
+		}).then(data=>{
+			if(!data) return ""
+			alert("YEP")
 		})
 	}
 	return (
@@ -31,7 +34,6 @@ export default function DS({data}) {
 												game.name,
 												game.console,
 												game.description,
-												""
 											)
 										}
 									}
