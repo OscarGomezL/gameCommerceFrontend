@@ -1,26 +1,13 @@
-import { useEffect, useState, useContext} from 'react'
+import { useContext} from 'react'
+import {revertModals} from './../../logic/generalLogic'
+import {reportBugsSwal, sendSuggestionsSwal} from './../../logic/swalLogic'
 import AuthContext from '../../context/AuthContext'
 import Link from 'next/link'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAddressBook, faBars, faHome, faIdCard, faShoppingCart} from '@fortawesome/free-solid-svg-icons'
+import {faAddressBook, faBars, faBug, faHome, faIdCard, faCode,  faLightbulb, faRoute, faShoppingCart, faGamepad} from '@fortawesome/free-solid-svg-icons'
 
 export default function MenuContent() {
-	const revertModals = () => {
-		document.querySelector('.menu').classList.toggle('active')
-		document.querySelector('.menu-screen').classList.toggle('active')
-	}
-	const [data, setData] = useState()
-	const getData = async() => {
-		const res = await fetch("http://localhost:4000/v1/link/readAll")
-		const data = await res.json()
-		setData(data)
-	}
-	const {auth, dataPatch} = useContext(AuthContext)
-	useEffect(() => {
-		getData()
-		console.log(auth)
-	}, []);
-	
+	const {auth} = useContext(AuthContext)
 	return (
   		<div className='menu-content'>
 			<div className='ico-container'>
@@ -29,11 +16,6 @@ export default function MenuContent() {
 					className={`.menu-button`}
 					onClick={revertModals}
 				/>
-			</div>
-			<div className='account-container'>
-				Your Account:<br/>
-				{auth ? "Username: " + auth.user.username : "You have not logged in yet"}<br/>
-				{auth ? "Email: " + auth.user.email : ""}
 			</div>
 			<div className='link-container'>
 				<Link href="/">
@@ -48,15 +30,31 @@ export default function MenuContent() {
 					<a>
 						<div>
 							<FontAwesomeIcon icon={faAddressBook}/>
-							Contact Me
+							Contact The Developer
 						</div>
 					</a>
 				</Link>
-				<Link href="/about">
+				<Link href="/about-developer">
+					<a>
+						<div>
+							<FontAwesomeIcon icon={faCode}/>
+							About The Developer
+						</div>
+					</a>
+				</Link>
+				<Link href="/about-gameCommerce">
+					<a>
+						<div>
+							<FontAwesomeIcon icon={faGamepad}/>
+							About GameCommerce
+						</div>
+					</a>
+				</Link>
+				<Link href="/user">
 					<a>
 						<div>
 							<FontAwesomeIcon icon={faIdCard}/>
-							About Me
+							Your Account Information
 						</div>
 					</a>
 				</Link>
@@ -68,20 +66,26 @@ export default function MenuContent() {
 						</div>
 					</a>
 				</Link>
-			</div>
-			<div className='more-container'>
-				<a href={data ? data[0].link : ""} target="_blank">
-					<div>
-						<img src={data ? data[0].logo : ""}/>
-						{data ? data[0].name : ""}
-					</div>
-				</a>
-				<a href={data ? data[1].link : ""} target="_blank">
-					<div>
-						<img src={data ? data[1].logo : ""} />
-						{data ? data[1].name : ""}
-					</div>	
-				</a>
+				<Link href="/directions">
+					<a>
+						<div>
+							<FontAwesomeIcon icon={faRoute}/>
+							Directions
+						</div>
+					</a>
+				</Link>
+					<a onClick={sendSuggestionsSwal}>
+						<div>
+							<FontAwesomeIcon icon={faLightbulb}/>
+							Send Suggestions
+						</div>
+					</a>
+					<a onClick={reportBugsSwal}>
+						<div>
+							<FontAwesomeIcon icon={faBug}/>
+							Report Bugs
+						</div>
+					</a>
 			</div>
   		</div>
 	);

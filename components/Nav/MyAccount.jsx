@@ -8,11 +8,9 @@ import AuthContext from '../../context/AuthContext'
 const MyAccount = () => {
 	const {dataPatch, dataDelete} = useContext(AuthContext)
 	const getUserData = () => {
-		return localStorage.getItem("User")
+		return JSON.parse(localStorage.getItem("User"))
 	}
 	const contextLogin = (token) => {
-		//const jsonToken = jwtDecode(token)
-		//localStorage.setItem("User", JSON.stringify(jsonToken))
 		const jsonToken = jwtDecode(token)
 		dataPatch(jsonToken)
 	}
@@ -177,20 +175,27 @@ const MyAccount = () => {
 		}
 		else {
 			Swal1({
-				title: `You are now logged in with ${JSON.parse(getUserData()).user.email}`,
+				title: `You are now logged in with ${getUserData().user.email}`,
 				buttons : {
-					password : {
-						text:"Change My Password",
-						value: "change"
+					delete : {
+						text: "Delete My Account",
+						value: "delete"
 					},
 					out : {
 						text: "Logout",
 						value: "out"
-					}
-				}
+					},
+				},
 			}).then(btn=>{
 				if (!btn) return
 				if(btn == "out") {
+					dataDelete()
+				}
+				if(btn == "delete") {
+					console.log(getUserData().user.id)
+					fetch(`http://localhost:4000/v1/user/delete/${getUserData().user.id}`, {
+						method: "DELETE",
+					}).then(r=>r.json()).then(r => console.log(r)).catch(console.log)
 					dataDelete()
 				}
 			})

@@ -21,7 +21,6 @@ import '../styles/main/home.css'
 
 export default function MyApp({ Component, pageProps }) {
 	const [auth, setAuth] = useState(undefined)
-	const [mustReload, setMustReload] = useState(undefined)
 	useEffect(() => {
 		const isLogged = localStorage.getItem("User")
 		if(isLogged) {
