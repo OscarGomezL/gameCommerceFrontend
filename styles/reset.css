@@ -6,6 +6,26 @@
   * {
 	margin: 0;
   }
+  *::selection {
+	  background: #3215;
+  }
+  *::-webkit-scrollbar {
+	width: 10px;
+  }
+  /* Track */
+  *::-webkit-scrollbar-track {
+	background: rgb(230,178,77);
+  }
+  
+  /* Handle */
+  *::-webkit-scrollbar-thumb {
+	  background: #654;
+	}
+	
+	/* Handle on hover */
+  *::-webkit-scrollbar-thumb:hover {
+	  background: #432;
+  }
   *:focus {
 	-webkit-tap-highlight-color: transparent;
   }
