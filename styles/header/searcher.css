@@ -15,9 +15,6 @@
 	width: 6%;
 	color: #432;
 }
-.gameSearcher::selection {
-	background: rgb(200,140,50);
-}
 .gameSearcher::placeholder {
 	color: #432;
 }

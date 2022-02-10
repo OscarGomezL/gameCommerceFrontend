@@ -4,9 +4,6 @@
 .swal-modal {
 	background: rgb(230,178,77);
 }
-.swal-title::selection, .swal-text::selection {
-	background: rgb(200,140,50);
-}
 .swal-button {
 	background: rgb(230,178,77);
 	user-select: none;
