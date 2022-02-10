@@ -7,6 +7,7 @@ import '../styles/header/header.css'
 import '../styles/header/searcher.css'
 import '../styles/header/menuIcon.css'
 import '../styles/nav/nav.css'
+import '../styles/nav/myAccount.css'
 import '../styles/footer/footer.css'
 import '../styles/menu/menu.css'
 import '../styles/menu/menuContent.css'
@@ -17,7 +18,10 @@ import '../styles/swal/swal2.css'
 import '../styles/swal/custom.css'
 import '../styles/main/content.css'
 import '../styles/main/main.css'
+import '../styles/main/cart.css'
+import '../styles/main/user.css'
 import '../styles/main/home.css'
+import '../styles/main/directions.css'
 
 export default function MyApp({ Component, pageProps }) {
 	const [auth, setAuth] = useState(undefined)
@@ -29,7 +33,6 @@ export default function MyApp({ Component, pageProps }) {
 		else {
 			setAuth(null)
 		}
-		console.log('Called')
 	}, []);
 	const dataPatch = mod => {
 		localStorage.setItem("User",JSON.stringify(mod))
