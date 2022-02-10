@@ -4,6 +4,7 @@ import Swal1 from 'sweetalert'
 import jwtDecode from 'jwt-decode'
 import { useContext } from 'react'
 import AuthContext from '../../context/AuthContext'
+import {getCountryDropList} from '../../logic/return.js'
 
 const MyAccount = () => {
 	const {dataPatch, dataDelete} = useContext(AuthContext)
@@ -83,6 +84,7 @@ const MyAccount = () => {
 			title:"Register",
 			html: `
 			<form>
+				${getCountryDropList("register-swal-input-0")}
 				<input id="register-swal-input-4" type="text" placeholder="Name" class="swal2-input">
 				<input id="register-swal-input-3" type="text" placeholder="Username" class="swal2-input"/>
 				<input id="register-swal-input-2" type="email" placeholder="Email" class="swal2-input"/>
@@ -93,6 +95,7 @@ const MyAccount = () => {
 				return new Promise((res,rej) =>{
 					const validateField = (idNum, placeholder, email) => {
 						let inputValue = document.getElementById(`register-swal-input-${idNum}`).value
+						console.log(inputValue)
 						if(inputValue){
 							if(email) {
 								if(!inputValue.includes('@')) Swal2.showValidationMessage('Non valid email direction')
@@ -106,6 +109,7 @@ const MyAccount = () => {
 						email: validateField(2,"Email",true),
 						username: validateField(3,"Username",false),
 						name: validateField(4,"Name",false),
+						country: validateField(0,"Country", false),
 					})
 				})
 			},
