@@ -1,4 +1,14 @@
 h2 {
 	color: #432;
-	font-size: 2rem;
+}
+.main-home h2 {
+	width: 100%;
+	font-size: 3rem;
+	text-align: center;
+}
+.main-home p {
+	width: 100%;
+	padding: 0 10px;
+	text-align: center;
+	font-size: 1.2rem
 }
