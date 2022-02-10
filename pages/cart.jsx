@@ -4,7 +4,7 @@ export default function Cart() {
 	return (
 		<div className='page'>
 			<Layout singlePage={true} needsSearcher={false}>
-				<main>
+				<main className="main-cart">
 					<h2>Cart</h2>
 					<p></p>
 				</main>
