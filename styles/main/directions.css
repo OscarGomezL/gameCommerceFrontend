@@ -16,8 +16,8 @@
 .direction {
 	border-radius: 10px;
 	padding: 10px;
-	width: 15vw;
-	height: 15vw;
+	width: 35vh;
+	height: 35vh;
 	margin: 10px;
 	margin-left: 0;
 	background-color: rgb(255,205,97);
@@ -26,6 +26,9 @@
 .direction .direction-data{
 	height: 80%;
 	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	overflow-y: scroll;
 }
 .direction .direction-actions{
 	height: 20%;
@@ -36,22 +39,26 @@
 .direction-action-delete {
 	width: 50%;
 	text-align: center;
-	padding: 5px;
+	margin-top: 5px;
 	cursor: pointer;
 	height: 80%;
+	display: grid;
+	place-items: center;
 	background-color: rgb(255,205,97);
 	border: 2px solid #432;
 	color: #432;
 	border-radius: 10px;
 	user-select: none;
 }
-
+.direction-action-delete-text {
+	text-align: center;
+}
 .direction-action-delete:hover {
 	background: rgb(255,105,57);
 }
 .add-direction {
-	width: 15vw;
-	height: 15vw;
+	width: 35vh;
+	height: 35vh;
 	margin: 10px;
 	display: grid;
 	place-items: center;
@@ -64,3 +71,55 @@
 	border: 2px dashed #432;
 	border-radius: 10px;
 }
+.direction-data-element {
+	width: 100%;
+	padding: 0;
+	word-wrap: break-word;
+}
+/*General Landscape*/
+@media only screen and (orientation: landscape) {}
+
+/*General Portrait*/
+@media only screen and (orientation: portrait) {}
+
+/* Smartphones (landscape) */
+@media only screen and (min-width : 321px) and (orientation: landscape) {
+	.add-direction {
+		width: 20vw;
+		height: 20vw;
+	}
+	.direction {
+		width: 20vw;
+		height: 20vw;
+	}
+}
+ 
+/* Mini Mobiles (portrait)  */
+@media only screen and (max-width : 320px) {}
+ 
+/* Mini Mobiles (landscape)  */
+@media only screen and (max-height: 320px) and (orientation: landscape) {}
+
+/* iPads (portrait and landscape) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) {}
+ 
+/* iPads (landscape) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {}
+ 
+/* iPads (portrait) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {}
+ 
+/* Desktops and Laptops */
+@media only screen and (min-width : 1224px) {
+	.add-direction {
+		width: 15vw;
+		height: 15vw;
+	}
+	.direction {
+		width: 15vw;
+		height: 15vw;
+	}
+}
+ 
+/* Extra-large screens */
+@media only screen and (min-width : 1824px) {}

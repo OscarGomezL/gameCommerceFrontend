@@ -22,16 +22,14 @@ export default function Directions() {
 				confirmButtonColor: "rgb(230,178,77)",
 				confirmButtonText: "Add",
 				html: `
-				<form>
 					${getCountryDropList("add-swal-input-8")}
-					<input id="add-swal-input-7" type="text" placeholder="Direction, Postal Mail, Company Name" class="swal2-input"/>
-					<input id="add-swal-input-6" type="text" placeholder="Department, Suite, Building Name, Flat" class="swal2-input"/>
-					<input id="add-swal-input-5" type="text" placeholder="Zip Code" class="swal2-input"/>
-					<input id="add-swal-input-4" type="text" placeholder="City" class="swal2-input"/>
-					<input id="add-swal-input-3" type="text" placeholder="State, Province, Region" class="swal2-input"/>
-					<input id="add-swal-input-2" type="text" placeholder="Full Name" class="swal2-input"/>
-					<input id="add-swal-input-1" type="text" title="Could be helpful to delivery" placeholder="Telephone Number" class="swal2-input"/>
-				</form>
+					<input id="add-swal-input-7" type="text" maxlength="50" placeholder="Direction, Postal Mail, Company Name" class="swal2-input"/>
+					<input id="add-swal-input-6" type="text" maxlength="50" placeholder="Department, Suite, Building Name, Flat" class="swal2-input"/>
+					<input id="add-swal-input-5" type="text" maxlength="5" placeholder="Zip Code" class="swal2-input"/>
+					<input id="add-swal-input-4" type="text" maxlength="20" placeholder="City" class="swal2-input"/>
+					<input id="add-swal-input-3" type="text" maxlength="20" placeholder="State, Province, Region" class="swal2-input"/>
+					<input id="add-swal-input-2" type="text" maxlength="50" placeholder="Full Name" class="swal2-input"/>
+					<input id="add-swal-input-1" type="text" maxlength="20" title="Could be helpful to delivery" placeholder="Telephone Number" class="swal2-input"/>
 				`,
 				preConfirm: function() {
 					return new Promise((res,rej) =>{
@@ -83,11 +81,11 @@ export default function Directions() {
 								return (
 									<div className="direction" key={index}>
 										<div className="direction-data">
-											{direction.fullName} <br/>
-											{direction.direction} <br/>
-											{direction.specific}<br/>
-											{direction.country}<br/>
-											{direction.phone}<br/>
+											<div className="direction-data-element"><b>{direction.fullName}</b></div><br/>
+											<div className="direction-data-element">{direction.direction}</div><br/>
+											<div className="direction-data-element">{direction.specific}</div><br/>
+											<div className="direction-data-element">{direction.country}</div><br/>
+											<div className="direction-data-element">{direction.phone}</div><br/>
 										</div>
 										<div className="direction-actions">
 											<div 
@@ -103,10 +101,12 @@ export default function Directions() {
 															"content-type": "application/json",
 														},
 														body: JSON.stringify({directions})
-													}).then(r=>r.json).then(r=>console.log(r)).catch(e=>console.log(e))
+													}).then(r=>r.json()).then(r=>console.log(r)).catch(e=>console.log(e))
 												}}
 											>
-												Delete
+												<div className="direction-action-delete-text">
+													Delete
+												</div>
 											</div>
 										</div>
 									</div>
