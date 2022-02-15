@@ -5,19 +5,14 @@ export default function Nav() {
 	return (
 		<nav>
 			<div className='nav-platforms-container nav-container'>
-				<Link href='/xbox360'>
+				<Link href='/'>
 					<a>
-						Xbox360
+						Home
 					</a>
 				</Link>
-				<Link href='/wii'>
+				<Link href='/about'>
 					<a>
-						Wii
-					</a>
-				</Link>
-				<Link href='/ds'>
-					<a>
-						DS
+						About
 					</a>
 				</Link>
 			</div>

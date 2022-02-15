@@ -1,12 +1,35 @@
 import Layout from "../components/Layout"
+import Link from "next/link"
 
 export default function Home() {
 	return (
 		<div className='page'>
-			<Layout singlePage={true} needsSearcher={false}>
+			<Layout singlePage={false} needsSearcher={false}>
 				<main className="main-home">
-					<h2>GameCommerce</h2>
-					<p>GameCommerce is one of the personal projects I'm doing on my free time. It's an ecommerce realistic simulation which can actually work as a functional ecommerce in production. In GameCommerce you're provided with a fake card which works with Stripe as a real credit or debit card with infinite fake money so the user can “order” whichever game he wants and assign such order to a direction just like he would on an actual ecommerce.</p>
+					<Link href='/wii'>
+						<a>
+							<div className="home-link_content">
+								<img className="home-link_content-image" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Wii_console.png" alt="" />
+								<div className="home-link_content-text">Wii</div>
+							</div>
+						</a>
+					</Link>
+					<Link href='/xbox360'>
+						<a>
+							<div className="home-link_content">
+								<img className="home-link_content-image" src="http://assets.stickpng.com/thumbs/585ea2a8cb11b227491c350d.png" alt="" />
+								<div className="home-link_content-text">Xbox 360</div>
+							</div>
+						</a>
+					</Link>
+					<Link href='/ds'>
+						<a>
+							<div className="home-link_content">
+								<img className="home-link_content-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nintendo-DS-Lite-w-stylus.png/1200px-Nintendo-DS-Lite-w-stylus.png" alt="" />
+								<div className="home-link_content-text">Ds</div>
+							</div>
+						</a>
+					</Link>
 				</main>
 			</Layout>
 		</div>

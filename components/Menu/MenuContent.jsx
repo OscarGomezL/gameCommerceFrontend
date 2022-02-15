@@ -2,7 +2,7 @@ import {revertModals} from './../../logic/generalLogic'
 import {reportBugsSwal, sendSuggestionsSwal} from './../../logic/menuContentSwal'
 import Link from 'next/link'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faBars, faBug, faHome, faIdCard, faCode,  faLightbulb, faRoute, faShoppingCart} from '@fortawesome/free-solid-svg-icons'
+import {faBars, faBug, faIdCard, faCode,  faLightbulb, faRoute, faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 
 export default function MenuContent() {
 	return (
@@ -15,22 +15,6 @@ export default function MenuContent() {
 				/>
 			</div>
 			<div className='link-container'>
-				<Link href="/">
-					<a>
-						<div>
-							<FontAwesomeIcon icon={faHome}/>
-							Home
-						</div>
-					</a>
-				</Link>
-				<Link href="/about-developer">
-					<a>
-						<div>
-							<FontAwesomeIcon icon={faCode}/>
-							About The Developer
-						</div>
-					</a>
-				</Link>
 				<Link href="/user">
 					<a>
 						<div>
