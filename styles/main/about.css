@@ -1,0 +1,57 @@
+.main-about h2 {
+	color: #432;
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	font-size: 2rem;
+}
+.main-about h3 {
+	color: #432;
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	font-size: 2rem;
+}
+.main-about p {
+	width: 100%;
+	text-align: center;
+	padding: 0 10px;
+	font-size: 1.2rem
+}
+
+/*General Landscape*/
+@media only screen and (orientation: landscape) {}
+
+/*General Portrait*/
+@media only screen and (orientation: portrait) {}
+
+/* Smartphones (landscape) */
+@media only screen and (min-width : 321px) {}
+ 
+/* Mini Mobiles (portrait)  */
+@media only screen and (max-width : 320px) {}
+ 
+/* Mini Mobiles (landscape)  */
+@media only screen and (max-height: 320px) and (orientation: landscape) {}
+
+/* iPads (portrait and landscape) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) {}
+ 
+/* iPads (landscape) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {}
+ 
+/* iPads (portrait) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {}
+ 
+/* Desktops and Laptops */
+@media only screen and (min-width : 1224px) {
+	.main-about h2 {
+		font-size: 3rem;
+	}
+	.main-about h3 {
+		font-size: 3rem;
+	}
+}
+ 
+/* Extra-large screens */
+@media only screen and (min-width : 1824px) {}
