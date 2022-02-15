@@ -1,14 +1,32 @@
-h2 {
+.main-home {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+}
+.main-home a {
+	text-decoration: none;
+}
+.home-link_content{
+	width: 30vw;
+	padding: 0;
+	height: 30vw;
+	background-color: rgb(230,178,77);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.home-link_content img{
+	width: 100%;
+	height: 80%;
+	border: none;
+	padding: 0;
+}
+.home-link_content-text {
+	height: 20%;
+	width: 100%;
 	color: #432;
-}
-.main-home h2 {
-	width: 100%;
+	text-align: center;
 	font-size: 3rem;
-	text-align: center;
-}
-.main-home p {
-	width: 100%;
-	padding: 0 10px;
-	text-align: center;
-	font-size: 1.2rem
+	text-decoration:none !important;
 }

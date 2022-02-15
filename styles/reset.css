@@ -26,6 +26,10 @@
   *::-webkit-scrollbar-thumb:hover {
 	  background: #432;
   }
+  *::-webkit-scrollbar-corner {
+	background-color: transparent;
+	border: 0px solid transparent;
+  }
   *:focus {
 	-webkit-tap-highlight-color: transparent;
   }

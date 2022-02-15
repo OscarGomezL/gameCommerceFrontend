@@ -21,6 +21,7 @@
 }
 .swal2-html-container {
 	margin: 0 !important;
+	padding: 0 !important;
 }
 #register-swal-input-submit:hover {
 	background: rgb(200,140,50);
@@ -31,11 +32,11 @@
 	cursor: pointer;
 }
 #swal2-html-container {
-	padding: 20px 50px !important;
+	padding: 0 !important;
 	font-size: 1rem !important;
 }
 #swal2-html-container p {
-	font-size: 1.4rem !important;
+	font-size: 1.2rem !important;
 }
 
 /*General Landscape*/
@@ -72,6 +73,9 @@
 	.swal2-html-container {
 		font-size: 1.25rem !important;
 		padding: 50px !important;
+	}
+	#swal2-html-container {
+		padding: 20px 50px !important;
 	}
 }
  
