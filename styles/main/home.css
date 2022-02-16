@@ -6,11 +6,14 @@
 }
 .main-home a {
 	text-decoration: none;
+	width: 0;
+	height: 0;
 }
 .home-link_content{
-	width: 30vw;
+	width: 35vh;
+	height: 35vh;
+	margin: 5% 0;
 	padding: 0;
-	height: 30vw;
 	background-color: rgb(230,178,77);
 	display: flex;
 	flex-wrap: wrap;
@@ -22,11 +25,51 @@
 	border: none;
 	padding: 0;
 }
-.home-link_content-text {
+.home-link_content-container_1 {
 	height: 20%;
 	width: 100%;
+	display: grid;
+	place-items: center;
+	background: rgb(200,140,50);
+}
+.home-link_content-container_1-text {
 	color: #432;
 	text-align: center;
 	font-size: 3rem;
-	text-decoration:none !important;
 }
+
+/*General Landscape*/
+@media only screen and (orientation: landscape) {}
+
+/*General Portrait*/
+@media only screen and (orientation: portrait) {}
+
+/* Smartphones (landscape) */
+@media only screen and (min-width : 321px) {}
+ 
+/* Mini Mobiles (portrait)  */
+@media only screen and (max-width : 320px) {}
+ 
+/* Mini Mobiles (landscape)  */
+@media only screen and (max-height: 320px) and (orientation: landscape) {}
+
+/* iPads (portrait and landscape) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) {}
+ 
+/* iPads (landscape) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {}
+ 
+/* iPads (portrait) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {}
+ 
+/* Desktops and Laptops */
+@media only screen and (min-width : 1224px) {
+	.home-link_content{
+		width: 30vw;
+		height: 30vw;	
+	
+	}
+}
+ 
+/* Extra-large screens */
+@media only screen and (min-width : 1824px) {}
