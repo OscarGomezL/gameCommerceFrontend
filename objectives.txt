@@ -1,0 +1,26 @@
+--- Login
+-mustLogin sólo cuando no está logeado en ds, xbox360 y wii pages
+--- Manejador de Estado
+-ver cuál es mejor opción, si redux o mobX
+-aprender redux/mobX
+-aplicar redux/mobX al searcher
+--- Cart
+-cuando le dé a "Add to cart" debe agregarlo al carrito.
+-Hacer lo mismo que en directions pero con cart en cuanto a diseño.
+-Hacer lo mismo que directions en cuanto a manejo de datos: reactContext, localStorage, api al carrito.
+--- Stripe
+-Aprender a usar stripe.
+-Finalmente terminado el cart, proceder con el tema de los pagos por medio de stripe.
+-Implementar una tarjeta falsa con la que el usuario puede comprar con dinero infinito.
+--- Responsive
+-GeneralCheck/home letters
+-GeneraCheck/home text should be aligned
+-mobile/landscape/directions sizes
+-mobile/portrait/menuContent/report&suggest swal2 scrollbar 
+-Ipad/general icons
+-Ipad/generalLandscape menuContent height
+-Ipad/portrait/menuContent fontSize
+-Ipad/portrait/home margins
+-Ipad/portrait/directions proportions
+-Ipad/portrait/ds proportions
+-GeneralCheck/directions&cart&user h2||h3 color
