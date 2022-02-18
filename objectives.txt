@@ -3,7 +3,6 @@
 --- AuthContent -> Redux
 -Pasar todo el authContext a Redux y hacerlo funcionar en todos los componentes en los que actualmente está siendo
 usado.
-
 --- Cart
 -cuando le dé a "Add to cart" debe agregarlo al carrito.
 -Hacer lo mismo que en directions pero con cart en cuanto a diseño.
