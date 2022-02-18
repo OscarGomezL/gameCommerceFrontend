@@ -1,10 +1,23 @@
+import { useEffect } from "react"
 import Layout from "../components/Layout"
+//swal
 import NonReactSwal from 'sweetalert2'
 import WithReactContent from 'sweetalert2-react-content'
+import {mustLogin} from '../logic/mustLoginSwal'
+//redux
+import {searcher} from '../redux/actions'
+import { useSelector, useDispatch } from "react-redux"
 
 export default function Xbox360({data}) {
 	const Swal2 = WithReactContent(NonReactSwal)
-	const GameSwal = (title, console, desc, img) => {
+	const search = useSelector(s=>s.search)
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		dispatch(searcher("XBOX360", ""))
+	}, [])
+
+	const GameSwal = (title, console, desc) => {
 		Swal2.fire({
 			title: title + "<br/>" + console,
 			text: desc,
@@ -12,14 +25,32 @@ export default function Xbox360({data}) {
 			background: "rgb(230,178,77)",
 			confirmButtonText: "Add to Cart",
 			confirmButtonColor: "rgb(230,178,77)",
+		}).then(data=>{
+			if(data.value) {
+				mustLogin()
+			}
+			else return ""
 		})
 	}
+	if(!search) return ""
 	return (
 		<div className='page'>
-			<Layout needsSearcher={true}>
+			<Layout needsSearcher={true} platform="Xbox360">
 				{
-					data.games.map(game=>{
-						if(game.console=="Xbox360"){
+					data.games
+					.filter(game=>{
+						if(
+							search[1] == "" &&
+							search[0] == "XBOX360"
+						) return game
+						else if (
+							search[1] != "" &&
+							search[0] == "XBOX360" &&
+							game.name.toLowerCase().includes(search[1].toLowerCase())
+						) return game
+					})
+					.map(game=>{
+						if(game.console == "Xbox360") {
 							return (
 								<img 
 									src={game.logo}
@@ -29,8 +60,7 @@ export default function Xbox360({data}) {
 										GameSwal(
 											game.name,
 											game.console,
-											game.description,
-											""
+											game.description
 										)
 									}}
 								/>	

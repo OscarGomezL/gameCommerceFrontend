@@ -1,10 +1,23 @@
+import { useEffect } from "react"
 import Layout from "../components/Layout"
+//swal
 import NonReactSwal from 'sweetalert2'
 import WithReactContent from 'sweetalert2-react-content'
+import {mustLogin} from '../logic/mustLoginSwal'
+//redux
+import {searcher} from '../redux/actions'
+import { useSelector, useDispatch } from "react-redux"
 
 export default function Wii({data}) {
 	const Swal2 = WithReactContent(NonReactSwal)
-	const GameSwal = (title, console, desc, img) => {
+	const search = useSelector(s=>s.search)
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		dispatch(searcher("WII", ""))
+	}, [])
+
+	const GameSwal = (title, console, desc) => {
 		Swal2.fire({
 			title: title + "<br/>" + console,
 			text: desc,
@@ -12,14 +25,30 @@ export default function Wii({data}) {
 			background: "rgb(230,178,77)",
 			confirmButtonText: "Add to Cart",
 			confirmButtonColor: "rgb(230,178,77)",
+		}).then(data=>{
+			if(data.value) mustLogin()
+			else return ""
 		})
 	}
+	if(!search) return ""
 	return (
 		<div className='page' >
-			<Layout needsSearcher={true}>
-			{
-					data.games.map(game=>{
-						if(game.console=="Wii"){
+			<Layout needsSearcher={true} platform="Wii">
+				{
+					data.games
+					.filter(game=>{
+						if(
+							search[1] == "" &&
+							search[0] == "WII"
+						) return game
+						else if (
+							search[1] != "" &&
+							search[0] == "WII" &&
+							game.name.toLowerCase().includes(search[1].toLowerCase())
+						) return game
+					})
+					.map(game=>{
+						if(game.console == "Wii") {
 							return (
 								<img 
 									src={game.logo}
@@ -29,12 +58,12 @@ export default function Wii({data}) {
 										GameSwal(
 											game.name,
 											game.console,
-											game.description,
-											""
+											game.description
 										)
 									}}	
 								/>
-							)						}
+							)
+						}
 					})
 				}
 			</Layout>

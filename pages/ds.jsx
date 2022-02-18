@@ -1,9 +1,22 @@
 import Layout from "../components/Layout"
+import { useEffect } from "react"
+//swal
 import NonReactSwal from 'sweetalert2'
 import WithReactContent from 'sweetalert2-react-content'
+import {mustLogin} from '../logic/mustLoginSwal'
+//redux
+import {searcher} from '../redux/actions'
+import { useSelector, useDispatch } from "react-redux"
 
 export default function DS({data}) {
 	const Swal2 = WithReactContent(NonReactSwal)
+	const search = useSelector(s=>s.search)
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		dispatch(searcher("DS", ""))
+	}, [])
+
 	const GameSwal = (title, console, desc) => {
 		Swal2.fire({
 			title: title + "<br/>" + console,
@@ -13,15 +26,28 @@ export default function DS({data}) {
 			confirmButtonText: "Add to Cart",
 			confirmButtonColor: "rgb(230,178,77)",
 		}).then(data=>{
-			if(!data) return ""
-			alert("YEP")
+			if(data.value) mustLogin()
+			else return ""
 		})
 	}
 	return (
 		<div className='page'>
-			<Layout ds={true} needsSearcher={true}>
+			<Layout ds={true} needsSearcher={true} platform="Ds">
 			{
-					data.games.map(game=>{
+					data.games
+					.filter(game=>{
+						console.log(search)
+						if(
+							search[1] == "" &&
+							search[0] == "DS"
+						) return game
+						else if (
+							search[1] != "" &&
+							search[0] == "DS" &&
+							game.name.toLowerCase().includes(search[1].toLowerCase())
+						) return game
+					})
+					.map(game=>{
 						if(game.console=="Ds"){
 							return (
 								<img 
@@ -39,7 +65,8 @@ export default function DS({data}) {
 									}
 								/>
 							)						}
-					})
+						}
+					)
 				}
 			</Layout>
 		</div>
