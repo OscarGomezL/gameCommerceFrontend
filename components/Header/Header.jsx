@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from '@fortawesome/free-solid-svg-icons'
 import Menu from '../Menu/Menu'
 
-export default function Header({needsSearcher}) {
+export default function Header({needsSearcher, platform}) {
 	return (
 		<header>
 			<Menu/>
@@ -21,7 +21,7 @@ export default function Header({needsSearcher}) {
 			<div className='titleContainer'>
 				<h1 className='title'>GameCommerce</h1>
 			</div>
-			<Searcher needsSearcher={needsSearcher}/>
+			<Searcher needsSearcher={needsSearcher} platform={platform}/>
 			<FontAwesomeIcon 
 				icon={faBars}
 				className={`menuIcon ${needsSearcher}`}
