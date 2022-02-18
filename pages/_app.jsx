@@ -1,5 +1,10 @@
 import { useMemo, useState, useEffect } from 'react'
 import AuthContext from '../context/AuthContext'
+//redux
+import { createStore } from 'redux'
+import allReducers from '../redux/reducers'
+import { Provider } from 'react-redux'
+const store = createStore(allReducers)
 //css
 import '../styles/reset.css'
 import '../styles/global.css'
@@ -53,8 +58,10 @@ export default function MyApp({ Component, pageProps }) {
 	)
 	if(auth === undefined) return null
 	return (
-		<AuthContext.Provider value={authData}>
-			<Component {...pageProps} />
-		</AuthContext.Provider>
+		<Provider store={store}>
+			<AuthContext.Provider value={authData}>
+				<Component {...pageProps} />
+			</AuthContext.Provider>
+		</Provider>
 	)
 }
