@@ -4,3 +4,9 @@ export const searcher = (platform, text) => {
 		payload: text,
 	}
 }
+export const logger = (type,payload) => {
+	return {
+		type,
+		payload
+	}
+}
