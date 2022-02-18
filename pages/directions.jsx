@@ -4,17 +4,24 @@ import { getCountryDropList } from "../logic/return"
 import { mustLogin } from "../logic/mustLoginSwal"
 import WithReactContent from 'sweetalert2-react-content'
 const Swal2 = WithReactContent(NonReactSwal)
-import {useContext, useEffect, useState} from 'react'
-import AuthContext from "../context/AuthContext"
+import {useEffect, useState} from 'react'
+//redux
+import {logger} from '../redux/actions'
+import { useSelector, useDispatch } from "react-redux"
 
 export default function Directions() {
-	const {auth,dataPatch} = useContext(AuthContext)
+	//const {auth,dataPatch} = useContext(AuthContext)
+	
+	const log = useSelector(s=>s.log)
+	const dispatch = useDispatch()
 	const [directions, setDirections] = useState([])
+	
 	useEffect(() => {
-		setDirections(auth ? auth.user.directions : [])
-	}, [auth ? auth.user.directions : ""]);
+		setDirections(log ? log.user.directions : [])
+	}, [log]);
+	
 	const addDirectionsSwal = () => {
-		if(auth) {
+		if(log) {
 			Swal2.fire({
 				title: "Add New Direction",
 				color:"#432",
@@ -55,7 +62,7 @@ export default function Directions() {
 				if(obj.value) {
 					let UserObj = JSON.parse(localStorage.getItem("User"))
 					UserObj.user.directions.push(obj.value)
-					dataPatch(UserObj)
+					dispatch(logger('PATCH', UserObj))
 					let directions = UserObj.user.directions
 					fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
 						method: "PATCH",
@@ -93,7 +100,7 @@ export default function Directions() {
 												onClick={()=>{
 													let UserObj = JSON.parse(localStorage.getItem("User"))
 													UserObj.user.directions.splice(index, 1)
-													dataPatch(UserObj)
+													dispatch(logger('PATCH',UserObj))
 													let directions = UserObj.user.directions
 													fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
 														method: "PATCH",
