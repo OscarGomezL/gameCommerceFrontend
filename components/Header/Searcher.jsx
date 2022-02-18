@@ -16,7 +16,7 @@ export default function Searcher({needsSearcher, platform}) {
 					type="text" 
 					placeholder='Search a Game' 
 					className='gameSearcher'
-					onChange={e=> {dispatch(searcher(platform.toUpperCase(), e.target.value));} }
+					onChange={e=> {dispatch(searcher(platform.toUpperCase(), e.target.value))} }
 				/>
 	let ico = <FontAwesomeIcon 
 				icon={faSearch}
@@ -28,7 +28,7 @@ export default function Searcher({needsSearcher, platform}) {
 							color:"#432",
 							background: "rgb(230,178,77)",
 							showConfirmButton: false,
-							html: <input type="text" onInput={e=>setSearch(e.target.value)} placeholder="Name" className="swal2-input"/>,
+							html: <input type="text" placeholder="Name" className="swal2-input" onChange={e=> {dispatch(searcher(platform.toUpperCase(), e.target.value))} }/>,
 						})
 					}
 				}}
