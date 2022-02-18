@@ -3,9 +3,8 @@ import Head from 'next/head'
 import Footer from "./Footer/Footer"
 import Nav from "./Nav/Nav"
 
-export default function Layout({children, singlePage, ds, needsSearcher}) {
-	const isSinglePage = singlePage ? "singlePage" : "";
-	const isDs = ds ? "content-ds": ""
+export default function Layout({children, needsSearcher=false, platform = ""}) {
+	const isDs = platform.toLowerCase() == "ds" ? "content-ds" : ""
 	return (
 		<div className="layout">
 			<Head>
@@ -17,9 +16,9 @@ export default function Layout({children, singlePage, ds, needsSearcher}) {
 				/>
 				<title>GameCommerce</title>
 			</Head>
-			<Header needsSearcher={needsSearcher}/>
+			<Header needsSearcher={needsSearcher} platform={platform}/>
 			<Nav/>
-			<div className={`content ${isDs} ${isSinglePage}`}>
+			<div className={`content ${isDs}`}>
 				{children}
 			</div>
 			<Footer />
