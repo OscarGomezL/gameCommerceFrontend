@@ -7,28 +7,34 @@ export default function Home() {
 			<Layout singlePage={false} needsSearcher={false}>
 				<main className="main-home">
 					<Link href='/wii'>
-						<a>
-							<div className="home-link_content">
-								<img className="home-link_content-image" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Wii_console.png" alt="" />
-								<div className="home-link_content-text">Wii</div>
+						<div className="home-link_content">
+							<img className="home-link_content-image" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Wii_console.png" alt="" />
+							<div className="home-link_content-container_1">
+								<div className="home-link_content-container_1-text">
+									Wii
+								</div>
 							</div>
-						</a>
+						</div>
 					</Link>
 					<Link href='/xbox360'>
-						<a>
-							<div className="home-link_content">
-								<img className="home-link_content-image" src="http://assets.stickpng.com/thumbs/585ea2a8cb11b227491c350d.png" alt="" />
-								<div className="home-link_content-text">Xbox 360</div>
+						<div className="home-link_content">
+							<img className="home-link_content-image" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Xbox-360-Consoles-Infobox.png" alt="" />
+							<div className="home-link_content-container_1">
+								<div className="home-link_content-container_1-text">
+									Xbox
+								</div>
 							</div>
-						</a>
+						</div>
 					</Link>
 					<Link href='/ds'>
-						<a>
-							<div className="home-link_content">
-								<img className="home-link_content-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nintendo-DS-Lite-w-stylus.png/1200px-Nintendo-DS-Lite-w-stylus.png" alt="" />
-								<div className="home-link_content-text">Ds</div>
+						<div className="home-link_content">
+							<img className="home-link_content-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nintendo-DS-Lite-w-stylus.png/1200px-Nintendo-DS-Lite-w-stylus.png" alt="" />
+							<div className="home-link_content-container_1">
+								<div className="home-link_content-container_1-text">
+									Ds
+								</div>
 							</div>
-						</a>
+						</div>
 					</Link>
 				</main>
 			</Layout>
