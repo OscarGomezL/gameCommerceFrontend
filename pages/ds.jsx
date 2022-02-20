@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux"
 export default function DS({data}) {
 	const Swal2 = WithReactContent(NonReactSwal)
 	const search = useSelector(s=>s.search)
+	const log = useSelector(s=>s.log)
 	const dispatch = useDispatch()
 
 	useEffect(() => {
@@ -26,7 +27,9 @@ export default function DS({data}) {
 			confirmButtonText: "Add to Cart",
 			confirmButtonColor: "rgb(230,178,77)",
 		}).then(data=>{
-			if(data.value) mustLogin()
+			if(data.value && !log) {
+				mustLogin()
+			}
 			else return ""
 		})
 	}

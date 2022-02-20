@@ -11,12 +11,12 @@ import { useSelector, useDispatch } from "react-redux"
 export default function Xbox360({data}) {
 	const Swal2 = WithReactContent(NonReactSwal)
 	const search = useSelector(s=>s.search)
+	const log = useSelector(s=>s.log)
 	const dispatch = useDispatch()
 
 	useEffect(() => {
 		dispatch(searcher("XBOX360", ""))
 	}, [])
-
 	const GameSwal = (title, console, desc) => {
 		Swal2.fire({
 			title: title + "<br/>" + console,
@@ -26,7 +26,7 @@ export default function Xbox360({data}) {
 			confirmButtonText: "Add to Cart",
 			confirmButtonColor: "rgb(230,178,77)",
 		}).then(data=>{
-			if(data.value) {
+			if(data.value && !log) {
 				mustLogin()
 			}
 			else return ""
