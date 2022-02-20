@@ -1,0 +1,90 @@
+
+.cart-object {
+	height: 30vh;
+	width: 100%;
+	margin: 10px 0;
+	border-radius: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	border: 2px solid #432;
+}
+.cart-object-selector {
+	height: 100%;
+	width: 6%;
+	display: grid;
+	place-items: center;
+}
+.cart-object-selector input {
+	height: 30%;
+	width: 30%;
+}
+.cart-object-image {
+	width: 12%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+}
+.cart-object-image img {
+	height: 80%;
+	width: 80%;
+}
+.cart-object-container_1 {
+	width: 70%;
+	height: 100%;
+}
+.cart-object-container_1-title {
+	width: 100%;
+	height: 70%;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.cart-object-container_1-title-text {
+	font-size: 2rem;
+	color: #432;
+}
+.cart-object-container_1-controls {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 30%;
+}
+.cart-object-container_1-controls-quantity {
+	margin: 0 10px;
+	color: #432;
+	text-align: center;
+	width: 8%;
+	border: 2px solid #432;
+	background: transparent;
+	height: 60%;
+}
+.cart-object-container_1-controls-delete {
+	width: 20%;
+	height: 60%;
+	display: grid;
+	place-items: center;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 2px solid #432;
+}
+.cart-object-container_1-controls-delete-text {
+	color:#432;
+}
+.cart-object-container_1-controls-delete:hover {
+	background: rgb(255,105,57);
+}
+.cart-object-price {
+	width: 12%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+}
+.cart-object-price-text {
+	color: #432;
+	font-size: 1.4rem;
+}
+.Ds-ds {
+	height: 16vh !important;
+	width: 16vh !important;
+	border: 10px solid black;
+}
