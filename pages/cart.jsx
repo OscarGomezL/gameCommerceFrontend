@@ -5,8 +5,10 @@ export default function Cart() {
 		<div className='page'>
 			<Layout singlePage={true} needsSearcher={false}>
 				<main className="main-cart">
-					<h2>Cart</h2>
-					<p></p>
+					<div className="main-cart-title">
+						<h2>Cart</h2>
+					</div>
+					<div className="main-cart-content"></div>
 				</main>
 			</Layout>
 		</div>
