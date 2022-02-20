@@ -5,7 +5,7 @@ import NonReactSwal from 'sweetalert2'
 import WithReactContent from 'sweetalert2-react-content'
 import {mustLogin} from '../logic/mustLoginSwal'
 //redux
-import {searcher} from '../redux/actions'
+import { searcher,logger } from '../redux/actions'
 import { useSelector, useDispatch } from "react-redux"
 
 export default function DS({data}) {
@@ -18,7 +18,7 @@ export default function DS({data}) {
 		dispatch(searcher("DS", ""))
 	}, [])
 
-	const GameSwal = (title, console, desc) => {
+	const GameSwal = (title, id, desc, price, console, logo) => {
 		Swal2.fire({
 			title: title + "<br/>" + console,
 			text: desc,
@@ -26,9 +26,34 @@ export default function DS({data}) {
 			background: "rgb(230,178,77)",
 			confirmButtonText: "Add to Cart",
 			confirmButtonColor: "rgb(230,178,77)",
+			preConfirm: function() {
+				return new Promise((res,rej) =>{
+					res({
+						id,
+						title,
+						price,
+						console,
+						logo
+					})
+				})
+			}
 		}).then(data=>{
 			if(data.value && !log) {
 				mustLogin()
+			}
+			else if (data.value && log) {
+				//alert(data.value.title)
+				let UserObj = JSON.parse(localStorage.getItem("User"))
+				UserObj.user.gamesCart.push({title:data.value.title,console: data.value.console,price:`${data.value.price}`, logo: data.value.logo})
+				dispatch(logger("PATCH", UserObj))
+				let gamesCart = UserObj.user.gamesCart
+				fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
+					method: "PATCH",
+					headers: {
+						"content-type": "application/json",
+					},
+					body: JSON.stringify({gamesCart})
+				})
 			}
 			else return ""
 		})
@@ -61,8 +86,11 @@ export default function DS({data}) {
 										()=>{
 											GameSwal(
 												game.name,
-												game.console,
+												game._id,
 												game.description,
+												game.price,
+												game.console,
+												game.logo
 											)
 										}
 									}
