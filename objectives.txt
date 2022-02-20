@@ -1,8 +1,3 @@
---- Login
--mustLogin sólo cuando no está logeado en ds, xbox360 y wii pages
---- AuthContent -> Redux
--Pasar todo el authContext a Redux y hacerlo funcionar en todos los componentes en los que actualmente está siendo
-usado.
 --- Cart
 -cuando le dé a "Add to cart" debe agregarlo al carrito.
 -Hacer lo mismo que en directions pero con cart en cuanto a diseño.
@@ -11,7 +6,7 @@ usado.
 -Aprender a usar stripe.
 -Finalmente terminado el cart, proceder con el tema de los pagos por medio de stripe.
 -Implementar una tarjeta falsa con la que el usuario puede comprar con dinero infinito.
---- Responsive
+--- CSS
 -GeneralCheck/home letters
 -GeneraCheck/home text should be aligned
 -mobile/landscape/directions sizes
@@ -22,4 +17,4 @@ usado.
 -Ipad/portrait/home margins
 -Ipad/portrait/directions proportions
 -Ipad/portrait/ds proportions
--GeneralCheck/directions&cart&user h2||h3 color
+-GeneralCheck/cart&user h2||h3 color
