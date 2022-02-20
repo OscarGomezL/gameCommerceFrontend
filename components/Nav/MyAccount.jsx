@@ -1,22 +1,24 @@
+import jwtDecode from 'jwt-decode'
+import {getCountryDropList} from '../../logic/return.js'
+//swal
 import NonReactSwal from 'sweetalert2'
 import WithReactContent from 'sweetalert2-react-content'
 import Swal1 from 'sweetalert'
-import jwtDecode from 'jwt-decode'
-import { useContext } from 'react'
-import AuthContext from '../../context/AuthContext'
-import {getCountryDropList} from '../../logic/return.js'
+//redux
+import { logger } from '../../redux/actions'
+import { useDispatch } from "react-redux"
 
 const MyAccount = () => {
-	const {dataPatch, dataDelete} = useContext(AuthContext)
-	const getUserData = () => {
-		return JSON.parse(localStorage.getItem("User"))
-	}
-	const contextLogin = (token) => {
+
+	const Swal2 = WithReactContent(NonReactSwal)
+	const dispatch = useDispatch()
+
+	const getUserData = () => JSON.parse(localStorage.getItem("User"))
+	const reduxLogin = (token) => {
 		const jsonToken = jwtDecode(token)
-		dataPatch(jsonToken)
+		dispatch(logger('PATCH', jsonToken))
 	}
 	const loginSwal = () => {
-		const Swal2 = WithReactContent(NonReactSwal)
 		Swal2.fire({
 			title:"Login",
 			html: `
@@ -63,7 +65,7 @@ const MyAccount = () => {
 						})
 					}
 					else {
-						contextLogin(data.token)
+						reduxLogin(data.token)
 						Swal2.fire({
 							title: "Congratulations!",
 							text: `You are now logged in as ${data.user.username}`,
@@ -79,7 +81,6 @@ const MyAccount = () => {
 		})
 	}
 	const registerSwal = () => {
-		const Swal2 = WithReactContent(NonReactSwal)
 		Swal2.fire({
 			title:"Register",
 			html: `
@@ -193,14 +194,14 @@ const MyAccount = () => {
 			}).then(btn=>{
 				if (!btn) return
 				if(btn == "out") {
-					dataDelete()
+					dispatch(logger('DELETE'))
 				}
 				if(btn == "delete") {
 					console.log(getUserData().user.id)
 					fetch(`http://localhost:4000/v1/user/delete/${getUserData().user.id}`, {
 						method: "DELETE",
 					}).then(r=>r.json()).then(r => console.log(r)).catch(console.log)
-					dataDelete()
+					dispatch(logger('DELETE'))
 				}
 			})
 		}
