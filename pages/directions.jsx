@@ -10,16 +10,16 @@ import {logger} from '../redux/actions'
 import { useSelector, useDispatch } from "react-redux"
 
 export default function Directions() {
-	//const {auth,dataPatch} = useContext(AuthContext)
 	
 	const log = useSelector(s=>s.log)
 	const dispatch = useDispatch()
-	const [directions, setDirections] = useState([])
+	const [directions, setDirections] = useState(undefined)
 	
 	useEffect(() => {
+		console.log(log ? log.user.directions : [])
 		setDirections(log ? log.user.directions : [])
 	}, [log]);
-	
+
 	const addDirectionsSwal = () => {
 		if(log) {
 			Swal2.fire({
@@ -60,8 +60,9 @@ export default function Directions() {
 				}
 			}).then(obj=>{
 				if(obj.value) {
+					console.log(obj.value)
 					let UserObj = JSON.parse(localStorage.getItem("User"))
-					UserObj.user.directions.push(obj.value)
+					UserObj.user.directions.push([obj.value])
 					dispatch(logger('PATCH', UserObj))
 					let directions = UserObj.user.directions
 					fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
@@ -80,7 +81,9 @@ export default function Directions() {
 		<div className='page'>
 			<Layout singlePage={false} needsSearcher={false}>
 				<main className="main-directions">
-					<h2>Directions</h2>
+					<div className="main-directions-title">
+						<h2>Directions</h2>
+					</div>
 					<div className="main-directions-content">
 						<div className="add-direction" onClick={addDirectionsSwal}>+<br/>Add Direction</div>
 						{
@@ -88,11 +91,11 @@ export default function Directions() {
 								return (
 									<div className="direction" key={index}>
 										<div className="direction-data">
-											<div className="direction-data-element"><b>{direction.fullName}</b></div><br/>
-											<div className="direction-data-element">{direction.direction}</div><br/>
-											<div className="direction-data-element">{direction.specific}</div><br/>
-											<div className="direction-data-element">{direction.country}</div><br/>
-											<div className="direction-data-element">{direction.phone}</div><br/>
+											<div className="direction-data-element"><b>{direction[0].fullName}</b></div><br/>
+											<div className="direction-data-element">{direction[0].direction}</div><br/>
+											<div className="direction-data-element">{direction[0].specific}</div><br/>
+											<div className="direction-data-element">{direction[0].country}</div><br/>
+											<div className="direction-data-element">{direction[0].phone}</div><br/>
 										</div>
 										<div className="direction-actions">
 											<div 
