@@ -10,3 +10,9 @@ export const logger = (type,payload) => {
 		payload
 	}
 }
+export const cartPricer = (type,payload) => {
+	return {
+		type,
+		payload
+	}
+}
