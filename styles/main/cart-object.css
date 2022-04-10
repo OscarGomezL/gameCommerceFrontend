@@ -53,6 +53,7 @@
 	margin: 0 10px;
 	color: #432;
 	text-align: center;
+	user-select: none;
 	width: 8%;
 	border: 2px solid #432;
 	background: transparent;
@@ -64,6 +65,7 @@
 	display: grid;
 	place-items: center;
 	border-radius: 10px;
+	user-select: none;
 	cursor: pointer;
 	border: 2px solid #432;
 }
