@@ -4,6 +4,7 @@ import { createStore } from 'redux'
 import allReducers from '../redux/reducers'
 import { Provider } from 'react-redux'
 //css
+import '../styles/variables.css'
 import '../styles/reset.css'
 import '../styles/global.css'
 import '../styles/header/header.css'
