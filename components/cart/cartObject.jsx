@@ -12,7 +12,15 @@ export default function gameCart({index,game}) {
 	return (
 		<div className="cart-object" key={index+1}>
 			<div className="cart-object-selector">
-				<div className={`checkbox-${index} checkbox marked`}>
+				<div 
+					className={`checkbox-${index} checkbox marked`}
+					value={true}
+					onClick={()=>{
+						document.querySelector(`.checkbox-${index}`).classList.toggle('marked') 
+						document.querySelector(`.checkbox-${index}`).setAttribute("value", !(document.querySelector(`.checkbox-${index}`).attributes.value.value === "true"))
+						console.log(document.querySelector(`.checkbox-${index}`).attributes.value.value)
+					}}
+				>
 					✔
 				</div>
 			</div>
