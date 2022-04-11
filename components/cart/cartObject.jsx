@@ -12,10 +12,9 @@ export default function gameCart({index,game}) {
 	return (
 		<div className="cart-object" key={index+1}>
 			<div className="cart-object-selector">
-				<input 
-					type="checkbox"
-					className={`checkbox-${index}`}
-					/>
+				<div className={`checkbox-${index} checkbox marked`}>
+					✔
+				</div>
 			</div>
 			<div className="cart-object-image">
 				<img src={game.logo} className={`${game.console}-ds`} alt="" />
