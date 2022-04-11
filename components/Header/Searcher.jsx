@@ -25,8 +25,8 @@ export default function Searcher({needsSearcher, platform}) {
 					if(screen.width<1299) {
 						Swal2.fire({
 							title: "Search a Game",
-							color:"#432",
-							background: "rgb(230,178,77)",
+							color:"var(--brown_1)",
+							background: "var(--brown_3)",
 							showConfirmButton: false,
 							html: <input type="text" placeholder="Name" className="swal2-input" onChange={e=> {dispatch(searcher(platform.toUpperCase(), e.target.value))} }/>,
 						})

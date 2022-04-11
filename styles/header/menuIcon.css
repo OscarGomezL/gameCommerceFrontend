@@ -2,14 +2,14 @@
 	margin: 0 8px;
 	height: 30%;
 	width: 5%;
-	color: #432;
+	color: var(--brown_1);
 	cursor: pointer;
 }
 /*desktop landscape*/
 @media screen and (min-width: 1300px)  {
 	.menuIcon {
 		width: 3.5%;
-		color: #432;
+		color: var(--brown_1);
 		margin-left: 45%;
 	}
 	.true {
@@ -30,7 +30,7 @@
 	.menuIcon {
 		width: 4%;
 		height: 60%;
-		color: #432;
+		color: var(--brown_1);
 		margin: 0 2px;
 	}
 }

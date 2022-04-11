@@ -14,7 +14,7 @@
 	height: 35vh;
 	margin: 5% 0;
 	padding: 0;
-	background-color: rgb(230,178,77);
+	background-color: var(--brown_3);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -30,10 +30,10 @@
 	width: 100%;
 	display: grid;
 	place-items: center;
-	background: rgb(200,140,50);
+	background: var(--brown_2);
 }
 .home-link_content-container_1-text {
-	color: #432;
+	color: var(--brown_1);
 	text-align: center;
 	font-size: 3rem;
 }

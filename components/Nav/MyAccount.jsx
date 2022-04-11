@@ -25,9 +25,9 @@ const MyAccount = () => {
 				<input id="login-swal-input-1" type="email" placeholder="Email" class="swal2-input" required="true"/>
 				<input id="login-swal-input-2" type="password" placeholder="Password" class="swal2-input" required="true"/>
 			`,
-			color:"#432",
-			background: "rgb(230,178,77)",
-			confirmButtonColor: "rgb(230,178,77)",
+			color:"var(--brown_1)",
+			background: "var(--brown_3)",
+			confirmButtonColor: "var(--brown_3)",
 			preConfirm: function() {
 				return new Promise((res,rej) =>{
 					const validateLoginField = (idNum, placeholder, email) => {
@@ -57,11 +57,11 @@ const MyAccount = () => {
 						Swal2.fire({
 							title: data.message,
 							text: "Try to login again",
-							background: "rgb(230,178,77)",
-							confirmButtonColor: "rgb(230,178,77)",
-							color: "#432",
+							background: "var(--brown_3)",
+							confirmButtonColor: "var(--brown_3)",
+							color: "var(--brown_1)",
 							icon: "error",
-							iconColor: "#432",
+							iconColor: "var(--brown_1)",
 						})
 					}
 					else {
@@ -69,11 +69,11 @@ const MyAccount = () => {
 						Swal2.fire({
 							title: "Congratulations!",
 							text: `You are now logged in as ${data.user.username}`,
-							background: "rgb(230,178,77)",
-							confirmButtonColor: "rgb(230,178,77)",
-							color: "#432",
+							background: "var(--brown_3)",
+							confirmButtonColor: "var(--brown_3)",
+							color: "var(--brown_1)",
 							icon: "success",
-							iconColor: "#432",
+							iconColor: "var(--brown_1)",
 						})
 					}
 				})
@@ -114,9 +114,9 @@ const MyAccount = () => {
 					})
 				})
 			},
-			color:"#432",
-			background: "rgb(230,178,77)",
-			confirmButtonColor: "rgb(230,178,77)",
+			color:"var(--brown_1)",
+			background: "var(--brown_3)",
+			confirmButtonColor: "var(--brown_3)",
 		}).then(data=>{
 			if(data.value){
 				data.value.gamesCart = []
@@ -130,22 +130,22 @@ const MyAccount = () => {
 						Swal2.fire({
 							title:'Congratulations your account has been successfully created',
 							text: "You should now be able to login from the account you registered",
-							background: "rgb(230,178,77)",
-							confirmButtonColor: "rgb(230,178,77)",
-							color: "#432",
+							background: "var(--brown_3)",
+							confirmButtonColor: "var(--brown_3)",
+							color: "var(--brown_1)",
 							icon: "success",
-							iconColor: "#432",
+							iconColor: "var(--brown_1)",
 						})
 					}
 					else {
 						Swal2.fire({
 							title:'The email you tried to register is already signed up',
 							text: "Try to login with that email instead",
-							background: "rgb(230,178,77)",
-							confirmButtonColor: "rgb(230,178,77)",
-							color: "#432",
+							background: "var(--brown_3)",
+							confirmButtonColor: "var(--brown_3)",
+							color: "var(--brown_1)",
 							icon: "error",
-							iconColor: "#432",
+							iconColor: "var(--brown_1)",
 						})
 					}
 				})

@@ -14,7 +14,7 @@
   }
   /* Track */
   *::-webkit-scrollbar-track {
-	background: rgb(230,178,77);
+	background: var(--brown_3);
   }
   
   /* Handle */
@@ -24,7 +24,7 @@
 	
 	/* Handle on hover */
   *::-webkit-scrollbar-thumb:hover {
-	  background: #432;
+	  background: var(--brown_1);
   }
   *::-webkit-scrollbar-corner {
 	background-color: transparent;

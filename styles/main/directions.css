@@ -17,7 +17,7 @@
 .main-directions-title h2 {
 	user-select: none;
 	font-size: 2rem;
-	color: #432;
+	color: var(--brown_1);
 }
 .direction {
 	border-radius: 10px;
@@ -27,7 +27,7 @@
 	margin: 10px;
 	margin-left: 0;
 	background-color: rgb(255,205,97);
-	border: 2px solid #432;
+	border: 2px solid var(--brown_1);
 }
 .direction .direction-data{
 	height: 80%;
@@ -51,8 +51,8 @@
 	display: grid;
 	place-items: center;
 	background-color: rgb(255,205,97);
-	border: 2px solid #432;
-	color: #432;
+	border: 2px solid var(--brown_1);
+	color: var(--brown_1);
 	border-radius: 10px;
 	user-select: none;
 }
@@ -70,17 +70,17 @@
 	place-items: center;
 	text-align: center;
 	font-size: 1.8rem;
-	color: #432;
+	color: var(--brown_1);
 	user-select: none;
 	cursor: pointer;
 	margin-left: 0;
-	border: 2px dashed #432;
+	border: 2px dashed var(--brown_1);
 	border-radius: 10px;
 }
 .direction-data-element {
 	width: 100%;
 	padding: 0;
-	color: #432;
+	color: var(--brown_1);
 	word-wrap: break-word;
 }
 /*General Landscape*/

@@ -22,10 +22,10 @@ export default function DS({data}) {
 		Swal2.fire({
 			title: title + "<br/>" + console,
 			text: desc,
-			color:"#432",
-			background: "rgb(230,178,77)",
+			color:"var(--brown_1)",
+			background: "var(--brown_3)",
 			confirmButtonText: "Add to Cart",
-			confirmButtonColor: "rgb(230,178,77)",
+			confirmButtonColor: "var(--brown_3)",
 			preConfirm: function() {
 				return new Promise((res,rej) =>{
 					res({

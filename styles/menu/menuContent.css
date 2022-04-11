@@ -9,12 +9,12 @@
 	height: 5%;
 	padding-left: 10px;
 	padding-top: 5px;
-	border-bottom: 2px solid #432;
+	border-bottom: 2px solid var(--brown_1);
 }
 .link-container {
 	width: 100%;
 	height: 95%;
-	border-bottom: 2px solid #432;
+	border-bottom: 2px solid var(--brown_1);
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -37,7 +37,7 @@
 }
 
 .link-container a:hover{
-	background: rgb(200,140,50);
+	background: var(--brown_2);
 }
 /*General Landscape*/
 @media only screen and (orientation: landscape) {}
@@ -89,7 +89,7 @@
 /* Desktops and Laptops */
 @media only screen and (min-width : 1224px){
 	.ico-container {
-		border-bottom: 0px solid #432;
+		border-bottom: 0px solid var(--brown_1);
 		visibility: hidden;
 		height: 0;
 		padding-top: 0;

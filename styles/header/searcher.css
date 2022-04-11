@@ -1,22 +1,22 @@
 .gameSearcher {
 	visibility: hidden;
 	border: none;
-	border-bottom: 2px solid rgb(200,140,50);
-	color: #432;
+	border-bottom: 2px solid var(--brown_2);
+	color: var(--brown_1);
 	position: absolute;
 	margin-left: -5000px;
 	height: 7vh;
 	transition: all .3s ease;
 	width: 80vw;
-	background: rgb(230,178,77);
+	background: var(--brown_3);
 }
 .searchIcon {
 	margin: 0 8px;
 	width: 6%;
-	color: #432;
+	color: var(--brown_1);
 }
 .gameSearcher::placeholder {
-	color: #432;
+	color: var(--brown_1);
 }
 /*responsive classes*/
 

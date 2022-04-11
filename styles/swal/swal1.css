@@ -2,13 +2,13 @@
 	background: #0009;
 }
 .swal-modal {
-	background: rgb(230,178,77);
+	background: var(--brown_3);
 }
 .swal-button {
-	background: rgb(230,178,77);
+	background: var(--brown_3);
 	user-select: none;
-	border: 2px solid #432;
-	color: #432;
+	border: 2px solid var(--brown_1);
+	color: var(--brown_1);
 }
 .swal-button:hover {
 	background: red;

@@ -2,7 +2,7 @@
 	z-index: 1000;
 	width: 100vw;
 	height: 100vh;
-	background: rgb(230,178,77);
+	background: var(--brown_3);
 }
 .menu-container {
 	display: flex;

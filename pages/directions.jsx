@@ -24,9 +24,9 @@ export default function Directions() {
 		if(log) {
 			Swal2.fire({
 				title: "Add New Direction",
-				color:"#432",
-				background: "rgb(230,178,77)",
-				confirmButtonColor: "rgb(230,178,77)",
+				color:"var(--brown_1)",
+				background: "var(--brown_3)",
+				confirmButtonColor: "var(--brown_3)",
 				confirmButtonText: "Add",
 				html: `
 					${getCountryDropList("add-swal-input-8")}

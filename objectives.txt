@@ -1,7 +1,7 @@
 --- Cart
--cuando le dé a "Add to cart" debe agregarlo al carrito.
--Hacer lo mismo que en directions pero con cart en cuanto a diseño.
--Hacer lo mismo que directions en cuanto a manejo de datos: redux, localStorage, api al carrito.
+-Añadir "Proceed to Checkout"
+-Programar "Proceed to Checkout"
+
 --- Stripe
 -Aprender a usar stripe.
 -Finalmente terminado el cart, proceder con el tema de los pagos por medio de stripe.
@@ -21,9 +21,10 @@
 ---UI/UX general:
 -Mejorar el texto de los reportes para que abarque reporte de bugs y quejas
 -Mejorar el tema del searcher en dispositivos mobile.
+-Warning cuando quiera borrar su cuenta
 --- Backend
 -CR para sugerencias y reporte de bugs
 -Mejorar descripciones de los juegos
 -Añadir más juegos.
 -Hacer deploy de la api en heroku.
--Actualizar los links utilizados 
+-Actualizar los links utilizados

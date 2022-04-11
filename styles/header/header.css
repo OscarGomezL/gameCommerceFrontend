@@ -5,7 +5,7 @@ header {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	background: rgb(230,178,77);
+	background: var(--brown_3);
 }
 .inputContainer {
 	display: flex;
@@ -32,7 +32,7 @@ header {
 .title {
 	user-select: none;
 	font-size: 1.6rem;
-	color: #432;
+	color: var(--brown_1);
 }
 /*desktop landscape*/
 @media screen and (min-width: 1300px)  {

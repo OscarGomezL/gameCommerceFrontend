@@ -10,10 +10,10 @@ export function reportBugsSwal() {
 			<p>Did you find a bug? I would really appreciate if you notify me any sort of bug that you found in my software through this medium so I can fix it :)</p>
 			<input id="bug-swal-input" type="text" placeholder="Describe the bug" class="swal2-input"/>
 		`,
-		color:"#432",
+		color:"var(--brown_1)",
 		confirmButtonText:"Report the bug",
-		background: "rgb(230,178,77)",
-		confirmButtonColor: "rgb(230,178,77)",
+		background: "var(--brown_3)",
+		confirmButtonColor: "var(--brown_3)",
 	})
 }
 export function sendSuggestionsSwal() {
@@ -24,9 +24,9 @@ export function sendSuggestionsSwal() {
 			<p>Do you have a suggestion to improve GameCommerce? I would love to receive any sort of recommendation to make GameCommerce better through this medium :)</p>
 			<input id="suggestion-swal-input" type="text" placeholder="Describe your suggestion" class="swal2-input"/>
 		`,
-		color:"#432",
+		color:"var(--brown_1)",
 		confirmButtonText:"Report the bug",
-		background: "rgb(230,178,77)",
-		confirmButtonColor: "rgb(230,178,77)",
+		background: "var(--brown_3)",
+		confirmButtonColor: "var(--brown_3)",
 	})
 }

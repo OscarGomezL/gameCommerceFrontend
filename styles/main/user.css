@@ -13,11 +13,11 @@
 }
 .main-user-title h2 {
 	user-select: none;
-	color: #432;
+	color: var(--brown_1);
 	font-size: 2rem;
 }
 .main-user div {
 	font-size: 1.5rem;
-	color: #432;
+	color: var(--brown_1);
 	padding: 10px 0 ;
 }
