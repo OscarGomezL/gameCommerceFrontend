@@ -94,6 +94,7 @@
 	width: 30px;
 	height: 30px;
 	border: 2px solid var(--brown_1);
+	color: var(--brown_4);
 	text-align: center;
 	display: grid;
 	place-items: center;
@@ -101,6 +102,6 @@
 	cursor: pointer;
 }
 .marked {
-	background-color: #fed;
+	background-color: var(--light_brown_1);
 	color: var(--brown_1);
 }
