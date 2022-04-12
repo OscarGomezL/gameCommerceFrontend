@@ -10,12 +10,13 @@ export default function gameCart({index,game}) {
 	const changeCheck = useSelector(s=>s.changeCheck)
 	
 	return (
-		<div className="cart-object" key={index+1}>
+		<div className="cart-object" key={index}>
 			<div className="cart-object-selector">
 				<div 
 					className={`checkbox-${index} checkbox marked`}
 					value={true}
 					onClick={()=>{
+						dispatch(changeChecker('', !changeCheck))
 						document.querySelector(`.checkbox-${index}`).classList.toggle('marked') 
 						document.querySelector(`.checkbox-${index}`).setAttribute("value", !(document.querySelector(`.checkbox-${index}`).attributes.value.value === "true"))
 						console.log(document.querySelector(`.checkbox-${index}`).attributes.value.value)
@@ -77,7 +78,7 @@ export default function gameCart({index,game}) {
 				</div>
 			</div>
 			<div className="cart-object-price">
-				<div className="cart-object-price-text">{price}$</div>
+				<div className={`cart-object-price-text ${index}`}>{price}$</div>
 			</div>
 		</div>
   	)
