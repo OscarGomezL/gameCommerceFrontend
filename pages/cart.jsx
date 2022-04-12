@@ -15,16 +15,22 @@ export default function Cart() {
 		setCartList(log ? log.user.gamesCart : [])
 	}, [log]);
 	useEffect(() => {
-		let prices = document.querySelectorAll('.cart-object-price-text')
-		let price = 0
-		prices.forEach(
+		let allPrices = document.querySelectorAll('.cart-object-price-text')
+		let totalPrice = 0
+		allPrices.forEach(
 			el=>{
-				let arr = el.innerHTML.split('')
-				arr.pop()
-				price += parseInt(arr.join().replace(/,/g,''))
+				let marked = document.querySelector(`.checkbox-${parseInt(el.classList[1])}`).getAttribute('value')
+				console.log(marked)
+				let splitted = el.innerHTML.split('')
+				splitted.pop()
+				let price = parseInt(splitted.join().replace(/,/g,''))
+				if(marked=== 'true') {
+					totalPrice += price 
+				}
 			}
 		)
-		setCartPrice(price)
+		//.getAttribute('value')
+		setCartPrice(totalPrice)
 	}, [changeCheck])
 	
 	useEffect(() => {
@@ -73,7 +79,7 @@ export default function Cart() {
 							{
 								cartList.map((game, index)=>{
 									return (
-										<CartObject index={index} game={game} setCartPrice={setCartPrice} />
+										<CartObject index={index} key={index} game={game} setCartPrice={setCartPrice} />
 									)
 								})
 							}
