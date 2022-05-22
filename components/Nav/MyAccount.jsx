@@ -96,7 +96,6 @@ const MyAccount = () => {
 				return new Promise((res,rej) =>{
 					const validateField = (idNum, placeholder, email) => {
 						let inputValue = document.getElementById(`register-swal-input-${idNum}`).value
-						console.log(inputValue)
 						if(inputValue){
 							if(email) {
 								if(!inputValue.includes('@')) Swal2.showValidationMessage('Non valid email direction')
@@ -153,7 +152,6 @@ const MyAccount = () => {
 		})
 	}
 	const myAccountSwal = () => {
-		console.log(getUserData())
 		if(!getUserData()){
 			Swal1({
 				title:"Join GameCommerce Now!",
@@ -197,7 +195,6 @@ const MyAccount = () => {
 					dispatch(logger('DELETE'))
 				}
 				if(btn == "delete") {
-					console.log(getUserData().user.id)
 					fetch(`http://localhost:4000/v1/user/delete/${getUserData().user.id}`, {
 						method: "DELETE",
 					}).then(r=>r.json()).then(r => console.log(r)).catch(console.log)

@@ -11,7 +11,6 @@ export default function Cart() {
 	const changeCheck = useSelector(s=>s.changeCheck)
 
 	useEffect(() => {
-		console.log(log ? log.user.gamesCart : [])
 		setCartList(log ? log.user.gamesCart : [])
 	}, [log]);
 	useEffect(() => {
@@ -19,8 +18,8 @@ export default function Cart() {
 		let totalPrice = 0
 		allPrices.forEach(
 			el=>{
+				console.log(el)
 				let marked = document.querySelector(`.checkbox-${parseInt(el.classList[1])}`).getAttribute('value')
-				console.log(marked)
 				let splitted = el.innerHTML.split('')
 				splitted.pop()
 				let price = parseInt(splitted.join().replace(/,/g,''))
@@ -29,7 +28,6 @@ export default function Cart() {
 				}
 			}
 		)
-		//.getAttribute('value')
 		setCartPrice(totalPrice)
 	}, [changeCheck])
 	
@@ -49,7 +47,6 @@ export default function Cart() {
 			const result = await waitForClientSide();
 			if(result) {
 				let prices = document.querySelectorAll('.cart-object-price-text')
-				console.log(prices)
 				let price = 0
 				prices.forEach(
 					el=>{
@@ -71,16 +68,15 @@ export default function Cart() {
 		<div className='page'>
 			<Layout singlePage={true} needsSearcher={false}>
 				<main className="main-cart">
-					<div className="main-cart-title">
-						<h2>Cart</h2>
-					</div>
 					<div className="main-cart-content">
 						<div className="main-cart-content-list">
 							{
 								cartList.map((game, index)=>{
-									return (
-										<CartObject index={index} key={index} game={game} setCartPrice={setCartPrice} />
-									)
+									if(game !== "") {
+										return (
+											<CartObject index={index} key={index} game={game} setCartPrice={setCartPrice} />
+											)
+									}
 								})
 							}
 						</div>

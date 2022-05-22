@@ -4,9 +4,6 @@ import { useEffect } from "react"
 
 export default function User() {
 	const log = useSelector(s=>s.log)
-	useEffect(() => {
-		console.log(log)
-	}, [])
 	
 	return (
 		<div className='page'>
