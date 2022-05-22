@@ -105,3 +105,29 @@
 	background-color: var(--light_brown_1);
 	color: var(--brown_1);
 }
+/*General Landscape*/
+@media only screen and (orientation: landscape) {}
+
+/*General Portrait*/
+@media only screen and (orientation: portrait) {}
+
+/* Smartphones (landscape) */
+@media only screen and (min-width : 321px) and (orientation: landscape) {}
+ 
+/* Mini Mobiles (portrait)  */
+@media only screen and (max-width : 320px) and (orientation: portrait) {}
+ 
+/* Mini Mobiles (landscape)  */
+@media only screen and (max-height: 320px) and (orientation: landscape) {}
+ 
+/* iPads (landscape) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {}
+ 
+/* iPads (portrait) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {}
+ 
+/* Desktops and Laptops */
+@media only screen and (min-width : 1224px) {}
+ 
+/* Extra-large screens */
+@media only screen and (min-width : 1824px) {}
