@@ -4,11 +4,11 @@ import { logger, changeChecker } from "../../redux/actions"
 import { useSelector } from "react-redux"
 
 export default function gameCart({index,game}) {
-  	const dispatch = useDispatch()
+	const dispatch = useDispatch()
 	const [defaultValue, setDefaultValue] = useState(1)
 	const [price, setPrice] = useState(game.price)
 	const changeCheck = useSelector(s=>s.changeCheck)
-	
+
 	return (
 		<div className="cart-object" key={index}>
 			<div className="cart-object-selector">
@@ -19,7 +19,6 @@ export default function gameCart({index,game}) {
 						dispatch(changeChecker('', !changeCheck))
 						document.querySelector(`.checkbox-${index}`).classList.toggle('marked') 
 						document.querySelector(`.checkbox-${index}`).setAttribute("value", !(document.querySelector(`.checkbox-${index}`).attributes.value.value === "true"))
-						console.log(document.querySelector(`.checkbox-${index}`).attributes.value.value)
 					}}
 				>
 					✔
@@ -57,10 +56,8 @@ export default function gameCart({index,game}) {
 					<div 
 						className="cart-object-container_1-controls-delete"
 						onClick={()=>{
-							dispatch(changeChecker('', !changeCheck))
-							console.log('AH')
 							let UserObj = JSON.parse(localStorage.getItem("User"))
-							UserObj.user.gamesCart.splice(index, 1)
+							UserObj.user.gamesCart.splice(index, 1, "")
 							dispatch(logger('PATCH',UserObj))
 							let gamesCart = UserObj.user.gamesCart
 							fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
@@ -69,7 +66,7 @@ export default function gameCart({index,game}) {
 									"content-type": "application/json",
 								},
 								body: JSON.stringify({gamesCart})
-							}).then(r=>r.json()).then(r=>console.log(r)).catch(e=>console.log(e))
+							}).then(r=>r.json()).then(r=>dispatch(changeChecker('', !changeCheck))).catch(e=>console.log(e))
 						}}>
 						<div className="cart-object-container_1-controls-delete-text">
 							Delete
