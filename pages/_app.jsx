@@ -33,6 +33,12 @@ export default function MyApp({ Component, pageProps }) {
 	const [store, setStore] = useState()
 	useEffect(() => {
 		setStore(createStore(allReducers, {log: JSON.parse(localStorage.getItem("User"))}))
+		if(JSON.parse(localStorage.getItem('User'))) {
+			let gamesCart = JSON.parse(localStorage.getItem('User')).user.gamesCart
+			let newUser = JSON.parse(localStorage.getItem('User'))
+			newUser.gamesCart = gamesCart.filter(el => el !== "")
+			localStorage.setItem('User', JSON.stringify(newUser))
+		}
 	}, [])
 	if(store===undefined) return null
 	return (
