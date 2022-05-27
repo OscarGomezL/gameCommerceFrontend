@@ -4,6 +4,9 @@
 	display: flex;
 	flex-wrap: wrap;
 }
+.content {
+	overflow-x: hidden;
+}
 .main-cart-content-list {
 	width: calc(80% - 10px);
 	height: calc(100% -10px);
@@ -23,19 +26,30 @@
 @media only screen and (orientation: landscape) {}
 
 /*General Portrait*/
-@media only screen and (orientation: portrait) {}
+@media only screen and (orientation: portrait) {
+	.main-cart-content-pay {
+		width: calc(100% - 20px) !important;
+		height: 20%;
+		position: initial;
+		margin-top: 10px;
+		margin-left: 10px;
+		border: 2px solid var(--brown_1);
+		order: 1;
+	}
+	.main-cart-content-list {
+		width: 100%;
+		height: fit-content;
+		margin-left: 0;
+		padding: 10px;
+		order: 2;
+	}
+}
 
 /* Smartphones (landscape) */
 @media only screen and (min-width : 321px) and (orientation: landscape) {}
  
 /* Mini Mobiles (portrait)  */
 @media only screen and (max-width : 320px) and (orientation: portrait) {
-	.main-cart-content-list {
-		width: calc(100% - 10px);
-		height: calc(100% -10px);
-		margin-left: 10px;
-		margin-bottom: 10px;
-	}
 }
  
 /* Mini Mobiles (landscape)  */
