@@ -72,7 +72,7 @@ export default function Cart() {
 						<div className="main-cart-content-list">
 							{
 								cartList.map((game, index)=>{
-									if(game !== "") {
+									if(game !== undefined && game !== "") {
 										return (
 											<CartObject index={index} key={index} game={game} setCartPrice={setCartPrice} />
 											)
