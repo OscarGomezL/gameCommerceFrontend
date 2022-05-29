@@ -21,6 +21,25 @@
 	margin-left: 80%;
 	height: 30%;
 	border: 2px solid var(--brown_1);
+	display: grid;
+	place-items: center;
+}
+.main-cart-content-pay-price {
+	font-size: 2.3rem;
+	color: var(--brown_1);
+}
+.main-cart-content-pay-checkout {
+	width: 90%;
+	text-align: center;
+	padding: 10px;
+	font-size: 1.5rem;
+	background: var(--brown_4);
+	user-select: none;
+	cursor: pointer;
+	border: 2px solid var(--brown_1);
+}
+.main-cart-content-pay-checkout:hover {
+	background: var(--brown_2);
 }
 /*General Landscape*/
 @media only screen and (orientation: landscape) {}
@@ -29,7 +48,8 @@
 @media only screen and (orientation: portrait) {
 	.main-cart-content-pay {
 		width: calc(100% - 20px) !important;
-		height: 20%;
+		height: fit-content;
+		padding: 10px;
 		position: initial;
 		margin-top: 10px;
 		margin-left: 10px;
