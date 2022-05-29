@@ -189,15 +189,42 @@ const MyAccount = () => {
 						value: "out"
 					},
 				},
-			}).then(btn=>{
+			}).then(btn=> {
+				if(btn === 'delete') {
+					return Swal1({
+						title: `Are you sure you want to delete your account?`,
+						buttons : {
+							confirm : {
+								text: "Delete My Account",
+								value: "confirm"
+							},
+							reject : {
+								text: "Don't Delete My Account",
+								value: "reject"
+							},
+						},
+					})
+				}
+				else return btn
+			})
+			.then(btn=>{
 				if (!btn) return
 				if(btn == "out") {
 					dispatch(logger('DELETE'))
 				}
-				if(btn == "delete") {
+				if(btn == "confirm") {
 					fetch(`http://localhost:4000/v1/user/delete/${getUserData().user.id}`, {
 						method: "DELETE",
-					}).then(r=>r.json()).then(r => console.log(r)).catch(console.log)
+					}).then(r=>r.json()).then(r => {
+						Swal2.fire({
+							title:'Your Account Has Been Deleted Succesfully',
+							background: "var(--brown_3)",
+							confirmButtonColor: "var(--brown_3)",
+							color: "var(--brown_1)",
+							icon: "success",
+							iconColor: "var(--brown_1)",
+						})
+					}).catch(console.log)
 					dispatch(logger('DELETE'))
 				}
 			})
