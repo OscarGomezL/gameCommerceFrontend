@@ -59,7 +59,7 @@ export default function gameCart({index,game}) {
 							let UserObj = JSON.parse(localStorage.getItem("User"))
 							UserObj.user.gamesCart.splice(index, 1, "")
 							dispatch(logger('PATCH',UserObj))
-							let gamesCart = UserObj.user.gamesCart
+							let gamesCart = UserObj.user.gamesCart.filter(el => el !== "")
 							fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
 								method: "PATCH",
 								headers: {
