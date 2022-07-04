@@ -36,15 +36,8 @@ export default function MyApp({ Component, pageProps }) {
 		if(JSON.parse(localStorage.getItem('User'))) {
 			let gamesCart = JSON.parse(localStorage.getItem('User')).user.gamesCart
 			let newUser = JSON.parse(localStorage.getItem('User'))
-			newUser.gamesCart = gamesCart.filter(el => el !== "")
+			newUser.user.gamesCart = gamesCart.filter(el => el !== "")
 			localStorage.setItem('User', JSON.stringify(newUser))
-			fetch(`http://localhost:4000/v1/user/update/${JSON.parse(localStorage.getItem('User')).user.id}`, {
-					method: "PATCH",
-					headers: {
-						"content-type": "application/json",
-					},
-					body: JSON.stringify(newUser)
-			})
 		}
 	}, [])
 	if(store===undefined) return null
