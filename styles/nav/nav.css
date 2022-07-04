@@ -33,6 +33,7 @@ nav {
 	align-items: center;
 	justify-content: center;
 	background: rgb(180,130,45);
+	cursor: pointer;
 	user-select: none;
 }
 /*desktop landscape*/
