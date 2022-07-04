@@ -81,7 +81,12 @@ export default function Cart() {
 							}
 						</div>
 						<div className="main-cart-content-pay">
-							{cartPrice}$
+							<div className="main-cart-content-pay-price">
+								Total of: {cartPrice}$
+							</div>
+							<div className="main-cart-content-pay-checkout">
+								Proceed To Checkout
+							</div>
 						</div>
 					</div>
 				</main>
