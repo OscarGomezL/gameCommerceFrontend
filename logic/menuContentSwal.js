@@ -25,7 +25,7 @@ export function sendSuggestionsSwal() {
 			<input id="suggestion-swal-input" type="text" placeholder="Describe your suggestion" class="swal2-input"/>
 		`,
 		color:"var(--brown_1)",
-		confirmButtonText:"Report the bug",
+		confirmButtonText:"Send The Suggestion",
 		background: "var(--brown_3)",
 		confirmButtonColor: "var(--brown_3)",
 	})
