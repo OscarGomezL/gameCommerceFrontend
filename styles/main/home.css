@@ -10,8 +10,8 @@
 	height: 0;
 }
 .home-link_content{
-	width: 35vh;
-	height: 35vh;
+	width: 45vh;
+	height: 45vh;
 	margin: 5% 0;
 	padding: 0;
 	background-color: var(--brown_3);
@@ -49,10 +49,18 @@
 }
 
 /* Smartphones (landscape) */
-@media only screen and (min-width : 321px) {}
+@media only screen and (min-width : 321px) and (orientation: landscape) {
+	.home-link_content-container_1-text {
+		font-size: 1.5rem;
+	}
+	.home-link_content{
+		width: 31vw;
+		height: 31vw;	
+	}
+}
  
 /* Mini Mobiles (portrait)  */
-@media only screen and (max-width : 320px) {}
+@media only screen and (max-width : 320px) and (orientation: portrait) {}
  
 /* Mini Mobiles (landscape)  */
 @media only screen and (max-height: 320px) and (orientation: landscape) {}
@@ -61,10 +69,16 @@
 @media only screen and (min-width : 768px) and (max-width : 1024px) {}
  
 /* iPads (landscape) */
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {}
+@media only screen and (min-width : 768px) and (max-width : 1224px) and (orientation : landscape) {
+	.home-link_content{
+		width: 42vh;
+		height: 42vh;
+	}
+
+}
  
 /* iPads (portrait) */
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
+@media only screen and (min-width : 768px) and (max-width : 1224px) and (orientation : portrait) {
 	
 	.home-link_content{
 		width: 80vw;
@@ -77,7 +91,9 @@
 	.home-link_content{
 		width: 30vw;
 		height: 30vw;	
-	
+	}
+	.home-link_content-container_1-text {
+		font-size: 3rem;
 	}
 }
  
