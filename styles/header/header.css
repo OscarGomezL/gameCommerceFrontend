@@ -36,17 +36,6 @@ header {
 }
 /*desktop landscape*/
 @media screen and (min-width: 1300px)  {
-	.imageContainer {
-		width: 5%;
-	}
-	.titleContainer{
-		display: flex;
-		align-items: center;
-		width: 45%;
-	}
-	.title {
-		font-size: 2.8rem;
-	}
 }
 /*mini iPad portrait*/
 @media screen and (min-width: 540px) and (max-width: 1000px)  {
@@ -63,31 +52,8 @@ header {
 		font-size: 2.4rem;
 	}
 }
-@media screen and (min-width: 1000px) and (max-width: 1299px){
-	.imageContainer {
-		padding-left: 40px;
-		width: 15%;
-	}
-	.titleContainer{
-		display: grid;
-		place-items: center;
-		width: 70%;
-	}
-	.title {
-		font-size: 4.1rem;
-	}
-}
-/*mini mobile portrait*/
-@media screen and (max-width: 320px)  {
-	.titleContainer {
-		width: 60%;
-	}
-	.title {
-		font-size: 1.3rem;
-	}
-}
-/*mobile landscape*/
-@media screen and (max-height: 540px) and (min-width: 568px) {
+/* Smartphones (landscape) */
+@media only screen and (min-width : 321px) and (orientation: landscape) {
 	.titleContainer {
 		width: 83%;
 	}
@@ -98,8 +64,18 @@ header {
 		font-size: 2rem;
 	}
 }
-/*miniMobile landscape*/
-@media screen and (max-height: 320px) and (min-width: 568px)  {
+ 
+/* Mini Mobiles (portrait)  */
+@media only screen and (max-width : 320px) and (orientation: portrait) {
+	.titleContainer {
+		width: 60%;
+	}
+	.title {
+		font-size: 1.3rem;
+	}
+}
+/* Mini Mobiles (landscape)  */
+@media only screen and (max-height: 320px) and (orientation: landscape) {
 	.titleContainer {
 		width: 85%;
 	}
@@ -112,7 +88,7 @@ header {
 }
 /*ipad landscape*/
 
-@media screen and (max-height: 1024px) and (min-width: 1000px) and (max-width: 1400px){
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
 	.titleContainer {
 		width: 83%;
 	}
@@ -123,3 +99,50 @@ header {
 		font-size: 3rem;
 	}
 }
+/* iPads (portrait) */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
+	.titleContainer {
+		width: 78%;
+	}
+	.imageContainer {
+		width: 13%;
+	}
+	.title {
+		font-size: 4rem;
+	}
+	.menuIcon {
+		font-size: 2rem;
+	}
+}
+
+ 
+/* Desktops and Laptops */	
+@media screen and (min-width: 1000px) and (max-width: 1824px){
+	.imageContainer {
+		width: 5%;
+	}
+	.titleContainer{
+		display: flex;
+		align-items: center;
+		width: 45%;
+	}
+	.title {
+		font-size: 2.8rem;
+	}
+}
+/*
+	.imageContainer {
+		padding-left: 40px;
+		width: 15%;
+	}
+	.titleContainer{
+		display: grid;
+		place-items: center;
+		width: 70%;
+	}
+	.title {
+		font-size: 4.1rem;
+	}
+*/
+/* Extra-large screens */
+@media only screen and (min-width : 1824px) {}
