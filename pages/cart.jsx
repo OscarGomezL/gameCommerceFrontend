@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 //redux
 import { useSelector } from "react-redux"
 import CartObject from "../components/cart/cartObject"
+import { buy } from "../logic/stripe"
 
 export default function Cart() {
 	const log = useSelector(s=>s.log)
@@ -85,7 +86,10 @@ export default function Cart() {
 							<div className="main-cart-content-pay-price">
 								Total of: {cartPrice}$
 							</div>
-							<div className="main-cart-content-pay-checkout">
+							<div 
+								className="main-cart-content-pay-checkout"
+								onClick={()=>buy(log.user.gamesCart)}
+							>
 								Proceed To Checkout
 							</div>
 						</div>
