@@ -5,7 +5,7 @@ import { useSelector } from "react-redux"
 
 export default function gameCart({index,game}) {
 	const dispatch = useDispatch()
-	const [defaultValue, setDefaultValue] = useState(1)
+	const [defaultValue, setDefaultValue] = useState(game.quantity)
 	const [price, setPrice] = useState(game.price)
 	const changeCheck = useSelector(s=>s.changeCheck)
 
@@ -49,8 +49,19 @@ export default function gameCart({index,game}) {
 						value={defaultValue}
 						onChange={e=>{
 							setPrice(game.price*e.target.value)
-							dispatch(changeChecker('', !changeCheck))
 							setDefaultValue(e.target.value)
+
+							let UserObj = JSON.parse(localStorage.getItem("User"))
+							UserObj.user.gamesCart[index].quantity = parseInt(e.target.value) 
+							dispatch(logger('PATCH',UserObj))
+
+							fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
+								method: "PATCH",
+								headers: {
+									"content-type": "application/json",
+								},
+								body: JSON.stringify({gamesCart: UserObj.user.gamesCart})
+							}).then(r=>r.json()).then(r=>dispatch(changeChecker('', !changeCheck))).catch(e=>console.log(e))
 						}}
 					/>
 					<div 
