@@ -18,7 +18,7 @@ export default function Wii({data}) {
 		dispatch(searcher("WII", ""))
 	}, [])
 
-	const GameSwal = (title, id, desc, price, console, logo) => {
+	const GameSwal = (title, id, desc, price, console, logo, listNum) => {
 		Swal2.fire({
 			title: title + "<br/>" + price + "$",
 			text: desc,
@@ -33,7 +33,8 @@ export default function Wii({data}) {
 						title,
 						price,
 						console,
-						logo
+						logo,
+						listNum
 					})
 				})
 			}
@@ -44,7 +45,14 @@ export default function Wii({data}) {
 			else if (data.value && log) {
 				//alert(data.value.title)
 				let UserObj = JSON.parse(localStorage.getItem("User"))
-				UserObj.user.gamesCart.push({title:data.value.title,console: data.value.console,price:`${data.value.price}`, logo: data.value.logo})
+				UserObj.user.gamesCart.push({
+					title:data.value.title,
+					console: data.value.console,
+					price:`${data.value.price}`,
+					logo: data.value.logo,
+					listNum: data.value.listNum,
+					quantity: 1,
+				})
 				dispatch(logger("PATCH", UserObj))
 				let gamesCart = UserObj.user.gamesCart
 				fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
@@ -89,7 +97,9 @@ export default function Wii({data}) {
 											game.description,
 											game.price,
 											game.console,
-											game.logo
+											game.logo,
+											game.listNum,
+											game.quantity
 										)
 									}}	
 								/>
