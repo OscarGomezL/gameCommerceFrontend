@@ -88,9 +88,31 @@ export default function Cart() {
 							</div>
 							<div 
 								className="main-cart-content-pay-checkout"
-								onClick={()=>buy(
-									log.user.gamesCart.filter((game,index)=> document.querySelector(`.checkbox-${index}`).getAttribute('value') == "true")
-								)}
+								onClick={()=>{
+									if( log.user.gamesCart.length !== 0 ) {
+										return Swal2.fire({
+											title:'The email you tried to register is already signed up',
+											text: "Try to login with that email instead",
+											background: "var(--brown_3)",
+											confirmButtonColor: "var(--brown_3)",
+											color: "var(--brown_1)",
+											icon: "error",
+											iconColor: "var(--brown_1)",
+										})
+									}
+									/*
+									else if( log.user.directions.length !== 0 ) {
+										return 
+									}
+									 && ) {
+										buy(
+											log.user.gamesCart.filter(
+												(game,index)=> document.querySelector(`.checkbox-${index}`).getAttribute('value') == "true"
+											)
+										)
+											} 
+									*/
+								}}
 							>
 								Proceed To Checkout
 							</div>
