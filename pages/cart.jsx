@@ -4,12 +4,15 @@ import { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
 import CartObject from "../components/cart/cartObject"
 import { buy } from "../logic/stripe"
+import NonReactSwal from 'sweetalert2'
+import WithReactContent from 'sweetalert2-react-content'
 
 export default function Cart() {
 	const log = useSelector(s=>s.log)
 	const [cartList, setCartList] = useState(undefined)
 	const [cartPrice, setCartPrice] = useState(0)
 	const changeCheck = useSelector(s=>s.changeCheck)
+	const Swal2 = WithReactContent(NonReactSwal)
 
 	useEffect(() => {
 		setCartList(log ? log.user.gamesCart : [])
@@ -89,10 +92,10 @@ export default function Cart() {
 							<div 
 								className="main-cart-content-pay-checkout"
 								onClick={()=>{
-									if( log.user.gamesCart.length !== 0 ) {
+									if( log.user.gamesCart.filter(el=>el!=="").length === 0 || cartPrice === 0) {
 										return Swal2.fire({
-											title:'The email you tried to register is already signed up',
-											text: "Try to login with that email instead",
+											title:'You need to add a game to proceed to checkout.',
+											text: "Try to add a game from the home page.",
 											background: "var(--brown_3)",
 											confirmButtonColor: "var(--brown_3)",
 											color: "var(--brown_1)",
@@ -100,10 +103,10 @@ export default function Cart() {
 											iconColor: "var(--brown_1)",
 										})
 									}
-									if( log.user.directions.length !== 0 ) { 
+									if( log.user.directions.length === 0 ) { 
 										return Swal2.fire({
-											title:'The email you tried to register is already signed up',
-											text: "Try to login with that email instead",
+											title:'You need to add a direction to proceed to checkout.',
+											text: "Try to add a direction by navigating to the directions page",
 											background: "var(--brown_3)",
 											confirmButtonColor: "var(--brown_3)",
 											color: "var(--brown_1)",
@@ -111,19 +114,11 @@ export default function Cart() {
 											iconColor: "var(--brown_1)",
 										})
 									}
-									/*
-									[ADD] now the user is not going to be able to proceed to checkout if a game is not added to gamesCart
-									else if() {
-										return 
-									}
-									 && ) {
-										buy(
-											log.user.gamesCart.filter(
-												(game,index)=> document.querySelector(`.checkbox-${index}`).getAttribute('value') == "true"
-											)
+									buy(
+										log.user.gamesCart.filter(
+											(game,index)=> document.querySelector(`.checkbox-${index}`).getAttribute('value') == "true"
 										)
-											} 
-									*/
+									)
 								}}
 							>
 								Proceed To Checkout
