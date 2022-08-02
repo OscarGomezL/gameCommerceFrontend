@@ -88,7 +88,9 @@ export default function Cart() {
 							</div>
 							<div 
 								className="main-cart-content-pay-checkout"
-								onClick={()=>buy(log.user.gamesCart)}
+								onClick={()=>buy(
+									log.user.gamesCart.filter((game,index)=> document.querySelector(`.checkbox-${index}`).getAttribute('value') == "true")
+								)}
 							>
 								Proceed To Checkout
 							</div>
