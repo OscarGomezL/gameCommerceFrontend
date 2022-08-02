@@ -100,8 +100,20 @@ export default function Cart() {
 											iconColor: "var(--brown_1)",
 										})
 									}
+									if( log.user.directions.length !== 0 ) { 
+										return Swal2.fire({
+											title:'The email you tried to register is already signed up',
+											text: "Try to login with that email instead",
+											background: "var(--brown_3)",
+											confirmButtonColor: "var(--brown_3)",
+											color: "var(--brown_1)",
+											icon: "error",
+											iconColor: "var(--brown_1)",
+										})
+									}
 									/*
-									else if( log.user.directions.length !== 0 ) {
+									[ADD] now the user is not going to be able to proceed to checkout if a game is not added to gamesCart
+									else if() {
 										return 
 									}
 									 && ) {
