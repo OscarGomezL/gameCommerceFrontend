@@ -17,7 +17,8 @@ export default function Xbox360({data}) {
 	useEffect(() => {
 		dispatch(searcher("XBOX360", ""))
 	}, [])
-	const GameSwal = (title, id, desc, price, console, logo) => {
+	
+	const GameSwal = (title, id, desc, price, console, logo, listNum) => {
 		Swal2.fire({
 			title: title + "<br/>" + console,
 			text: desc,
@@ -32,7 +33,8 @@ export default function Xbox360({data}) {
 						title,
 						price,
 						console,
-						logo
+						logo,
+						listNum
 					})
 				})
 			}
@@ -41,9 +43,28 @@ export default function Xbox360({data}) {
 				mustLogin()
 			}
 			else if (data.value && log) {
-				//alert(data.value.title)
 				let UserObj = JSON.parse(localStorage.getItem("User"))
-				UserObj.user.gamesCart.push({title:data.value.title,console: data.value.console,price:`${data.value.price}`, logo: data.value.logo})
+				for(let el of UserObj.user.gamesCart) {
+					if(el.listNum === data.value.listNum) {
+						return Swal2.fire({
+							title:"You already added this game to your list",
+							text: "Try adding a different game or check your cart list.",
+							background: "var(--brown_3)",
+							confirmButtonColor: "var(--brown_3)",
+							color: "var(--brown_1)",
+							icon: "error",
+							iconColor: "var(--brown_1)",
+						})
+					}
+				}
+				UserObj.user.gamesCart.push({
+					title:data.value.title,
+					console: data.value.console,
+					price:`${data.value.price}`,
+					logo: data.value.logo,
+					listNum: data.value.listNum,
+					quantity: 1,
+				})
 				dispatch(logger("PATCH", UserObj))
 				let gamesCart = UserObj.user.gamesCart
 				fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
@@ -88,7 +109,8 @@ export default function Xbox360({data}) {
 											game.description,
 											game.price,
 											game.console,
-											game.logo
+											game.logo,
+											game.listNum,
 										)
 									}}
 								/>	
