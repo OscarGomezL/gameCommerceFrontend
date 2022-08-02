@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 export default function gameCart({index,game}) {
 	const dispatch = useDispatch()
 	const [defaultValue, setDefaultValue] = useState(game.quantity)
-	const [price, setPrice] = useState(game.price)
+	const [price, setPrice] = useState(game.price * game.quantity)
 	const changeCheck = useSelector(s=>s.changeCheck)
 
 	return (
