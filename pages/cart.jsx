@@ -114,11 +114,35 @@ export default function Cart() {
 											iconColor: "var(--brown_1)",
 										})
 									}
-									buy(
-										log.user.gamesCart.filter(
-											(game,index)=> document.querySelector(`.checkbox-${index}`).getAttribute('value') == "true"
-										)
-									)
+									Swal2.fire({
+										title:"You're about to be sent to the checkout",
+										background: "var(--brown_3)",
+										html: `
+										<ul>
+											<li>Use this card: <b>4242424242424242</b></li>
+											<li>Use <b>any</b> future date</li>
+											<li>Use <b>any</b> CVC</li>
+											<li>Use <b>any</b> value for the rest of the form spaces</li>
+										</ul>
+										`,
+										confirmButtonColor: "var(--brown_3)",
+										color: "var(--brown_1)",
+										icon: "success",
+										iconColor: "var(--brown_1)",
+										preConfirm: function() {
+											return new Promise((res,rej)=> {
+												res({s: "s"})
+											})
+										}
+									}).then(data=>{
+										if(data.isConfirmed) {
+											buy(
+												log.user.gamesCart.filter(
+													(game,index)=> document.querySelector(`.checkbox-${index}`).getAttribute('value') == "true"
+												)
+											)
+										}
+									})
 								}}
 							>
 								Proceed To Checkout
