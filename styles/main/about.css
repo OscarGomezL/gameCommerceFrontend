@@ -30,6 +30,10 @@
 	font-size: 1.7rem;
 	color: var(--brown_1);
 }
+.main-about-requirements-ul-li-icon {
+	margin: 0 10px;
+	cursor: pointer;
+}
 /*General Landscape*/
 @media only screen and (orientation: landscape) {}
 
