@@ -66,7 +66,11 @@
 }
 
 /* Smartphones (landscape) */
-@media only screen and (min-width : 321px) and (orientation: landscape) {}
+@media only screen and (min-width : 321px) and (orientation: landscape) {
+	.main-cart-content-pay {
+		height: 70%;
+	}
+}
  
 /* Mini Mobiles (portrait)  */
 @media only screen and (max-width : 320px) and (orientation: portrait) {
@@ -82,7 +86,11 @@
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {}
  
 /* Desktops and Laptops */
-@media only screen and (min-width : 1224px) {}
+@media only screen and (min-width : 1224px) {
+	.main-cart-content-pay {
+		height: 30%;
+	}
+}
  
 /* Extra-large screens */
 @media only screen and (min-width : 1824px) {}
