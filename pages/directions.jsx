@@ -16,7 +16,6 @@ export default function Directions() {
 	const [directions, setDirections] = useState(undefined)
 	
 	useEffect(() => {
-		console.log(log ? log.user.directions : [])
 		setDirections(log ? log.user.directions : [])
 	}, [log]);
 
@@ -60,7 +59,6 @@ export default function Directions() {
 				}
 			}).then(obj=>{
 				if(obj.value) {
-					console.log(obj.value)
 					let UserObj = JSON.parse(localStorage.getItem("User"))
 					UserObj.user.directions.push([obj.value])
 					dispatch(logger('PATCH', UserObj))
@@ -71,7 +69,7 @@ export default function Directions() {
 							"content-type": "application/json",
 						},
 						body: JSON.stringify({directions})
-					}).then(r=>r.json).then(r=>console.log(r)).catch(e=>console.log(e))			}
+					}).then(r=>r.json()).catch(console.log)			}
 			})
 		}
 		else mustLogin()
@@ -111,7 +109,7 @@ export default function Directions() {
 															"content-type": "application/json",
 														},
 														body: JSON.stringify({directions})
-													}).then(r=>r.json()).then(r=>console.log(r)).catch(e=>console.log(e))
+													}).then(r=>r.json()).catch(console.log)
 												}}
 											>
 												<div className="direction-action-delete-text">
