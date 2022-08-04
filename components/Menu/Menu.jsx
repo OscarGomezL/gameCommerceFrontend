@@ -1,4 +1,4 @@
-import MenuContent from './MenuContent'
+import MenuContent from './menuContent'
 
 export default function Menu() {
 	const revertModals = () => {

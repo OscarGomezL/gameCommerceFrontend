@@ -1,5 +1,5 @@
-import {revertModals} from './../../logic/generalLogic'
-import {reportBugsSwal, sendSuggestionsSwal} from './../../logic/menuContentSwal'
+import {revertModals} from '../../logic/generalLogic'
+import {reportBugsSwal, sendSuggestionsSwal} from '../../logic/menuContentSwal'
 import Link from 'next/link'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars, faBug, faIdCard, faCode,  faLightbulb, faRoute, faShoppingCart} from '@fortawesome/free-solid-svg-icons'
