@@ -3,7 +3,6 @@ import WithReactContent from 'sweetalert2-react-content'
 const Swal2 = WithReactContent(NonReactSwal)
 
 export function reportBugsSwal() {
-	console.log('Report')
 	Swal2.fire({
 		title:"Report a Bug",
 		html: `
@@ -17,7 +16,6 @@ export function reportBugsSwal() {
 	})
 }
 export function sendSuggestionsSwal() {
-	console.log('Send')
 	Swal2.fire({
 		title:"Send a Suggestion",
 		html: `
