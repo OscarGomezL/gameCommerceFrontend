@@ -10,9 +10,11 @@ export default function AboutDeveloper() {
 		<div className='page'>
 			<Layout singlePage={false} needsSearcher={false}>
 				<main className="main-about">
-					<h2>About</h2>
-					<p>GameCommerce is one of the personal projects I'm doing on my free time. It's an ecommerce realistic simulation which can actually work as a functional ecommerce in production. In GameCommerce you're provided with a fake card which works with Stripe as a real card just so the user can complete payments like he would on an actual ecommerce.</p>
-					<h3>To complete payments you have to:</h3>
+					<div className="main-about-about">
+						<h2>About</h2>
+						<p>GameCommerce is one of the personal projects I'm doing on my free time. It's an ecommerce realistic simulation which can actually work as a functional ecommerce in production. In GameCommerce you're provided with a fake card which works with Stripe as a real card just so the user can complete payments like he would on an actual ecommerce.</p>
+						<h3>To complete payments you have to:</h3>
+					</div>
 					<div className="main-about-requirements">
 						<ul>
 							<li>

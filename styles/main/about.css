@@ -28,6 +28,7 @@
 }
 .main-about ul {
 	font-size: 1.7rem;
+	height: 90%;
 	color: var(--brown_1);
 }
 .main-about-requirements-ul-li-icon {
