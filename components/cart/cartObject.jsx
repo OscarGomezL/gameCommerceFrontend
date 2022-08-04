@@ -61,7 +61,7 @@ export default function gameCart({index,game}) {
 									"content-type": "application/json",
 								},
 								body: JSON.stringify({gamesCart: UserObj.user.gamesCart})
-							}).then(r=>r.json()).then(r=>dispatch(changeChecker('', !changeCheck))).catch(e=>console.log(e))
+							}).then(r=>r.json()).then(r=>dispatch(changeChecker('', !changeCheck))).catch(console.log)
 						}}
 					/>
 					<div 
@@ -77,7 +77,7 @@ export default function gameCart({index,game}) {
 									"content-type": "application/json",
 								},
 								body: JSON.stringify({gamesCart})
-							}).then(r=>r.json()).then(r=>dispatch(changeChecker('', !changeCheck))).catch(e=>console.log(e))
+							}).then(r=>r.json()).then(r=>dispatch(changeChecker('', !changeCheck))).catch(console.log)
 						}}>
 						<div className="cart-object-container_1-controls-delete-text">
 							Delete

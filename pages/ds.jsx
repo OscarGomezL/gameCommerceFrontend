@@ -84,7 +84,6 @@ export default function DS({data}) {
 			{
 					data.games
 					.filter(game=>{
-						console.log(search)
 						if(
 							search[1] == "" &&
 							search[0] == "DS"

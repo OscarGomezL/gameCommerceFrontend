@@ -22,7 +22,6 @@ export default function Cart() {
 		let totalPrice = 0
 		allPrices.forEach(
 			el=>{
-				console.log(el)
 				let marked = document.querySelector(`.checkbox-${parseInt(el.classList[1])}`).getAttribute('value')
 				let splitted = el.innerHTML.split('')
 				splitted.pop()

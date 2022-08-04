@@ -1,5 +1,4 @@
 export const buy = (data) => {
-	console.log(data)
 	let items = data.filter(el=>el!=="").map(game=> {
 		return {id: game.listNum, quantity: game.quantity}
 	})
