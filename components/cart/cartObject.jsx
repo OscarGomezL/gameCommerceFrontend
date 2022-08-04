@@ -52,7 +52,7 @@ export default function gameCart({index,game}) {
 							setDefaultValue(e.target.value)
 
 							let UserObj = JSON.parse(localStorage.getItem("User"))
-							UserObj.user.gamesCart[index].quantity = parseInt(e.target.value) 
+							UserObj.user.gamesCart[index][0].quantity = parseInt(e.target.value) 
 							dispatch(logger('PATCH',UserObj))
 
 							fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {

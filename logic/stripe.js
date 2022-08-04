@@ -1,5 +1,6 @@
 export const buy = (data) => {
 	let items = data.filter(el=>el!=="").map(game=> {
+		if(game.length === 1) game = game[0]
 		return {id: game.listNum, quantity: game.quantity}
 	})
 	fetch('http://localhost:4000/v1/stripe/create-checkout-session', {

@@ -57,14 +57,14 @@ export default function Wii({data}) {
 						})
 					}
 				}
-				UserObj.user.gamesCart.push({
+				UserObj.user.gamesCart.push([{
 					title:data.value.title,
 					console: data.value.console,
 					price:`${data.value.price}`,
 					logo: data.value.logo,
 					listNum: data.value.listNum,
 					quantity: 1,
-				})
+				}])
 				dispatch(logger("PATCH", UserObj))
 				let gamesCart = UserObj.user.gamesCart
 				fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
