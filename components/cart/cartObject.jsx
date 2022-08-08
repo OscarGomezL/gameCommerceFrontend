@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 import { logger, changeChecker } from "../../redux/actions"
 import { useSelector } from "react-redux"
 
-export default function gameCart({index,game}) {
+export default function GameCart({index,game}) {
 	const dispatch = useDispatch()
 	const [defaultValue, setDefaultValue] = useState(game.quantity)
 	const [price, setPrice] = useState(game.price * game.quantity)
