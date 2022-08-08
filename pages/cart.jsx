@@ -6,6 +6,7 @@ import CartObject from "../components/cart/cartObject"
 import { buy } from "../logic/stripe"
 import NonReactSwal from 'sweetalert2'
 import WithReactContent from 'sweetalert2-react-content'
+import { mustLogin } from "../logic/mustLoginSwal"
 
 export default function Cart() {
 	const log = useSelector(s=>s.log)
@@ -91,6 +92,9 @@ export default function Cart() {
 							<div 
 								className="main-cart-content-pay-checkout"
 								onClick={()=>{
+									if(!log) {
+										return mustLogin()
+									}
 									if( log.user.gamesCart.filter(el=>el!=="").length === 0 || cartPrice === 0) {
 										return Swal2.fire({
 											title:'You need to add a game to proceed to checkout.',
