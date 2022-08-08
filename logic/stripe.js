@@ -3,7 +3,7 @@ export const buy = (data) => {
 		if(game.length === 1) game = game[0]
 		return {id: game.listNum, quantity: game.quantity}
 	})
-	fetch('http://localhost:4000/v1/stripe/create-checkout-session', {
+	fetch('https://game-commerce.herokuapp.com/v1/stripe/create-checkout-session', {
 		method: 'POST',
 		headers: {
 			'Content-Type':'application/json'

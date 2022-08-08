@@ -67,7 +67,7 @@ export default function Wii({data}) {
 				}])
 				dispatch(logger("PATCH", UserObj))
 				let gamesCart = UserObj.user.gamesCart
-				fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
+				fetch(`https://game-commerce.herokuapp.com/v1/user/update/${UserObj.user.id}`, {
 					method: "PATCH",
 					headers: {
 						"content-type": "application/json",
@@ -123,7 +123,7 @@ export default function Wii({data}) {
 	)
 }
 export async function getStaticProps() {
-	const response = await fetch("http://localhost:4000/v1/games")
+	const response = await fetch("https://game-commerce.herokuapp.com/v1/games")
 	const data = await response.json()
 	return {props: {data}}
 }

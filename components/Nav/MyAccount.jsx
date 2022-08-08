@@ -48,7 +48,7 @@ const MyAccount = () => {
 			}
 		}).then(data=>{
 			if(data.value) {
-				fetch("http://localhost:4000/v1/user/signin", {
+				fetch("https://game-commerce.herokuapp.com/v1/user/signin", {
 					method: "POST",
 					body: JSON.stringify(data.value),
 					headers: {"Content-type": "application/json"}
@@ -120,7 +120,7 @@ const MyAccount = () => {
 			if(data.value){
 				data.value.gamesCart = []
 				data.value.directions = []
-				fetch("http://localhost:4000/v1/user/signup", {
+				fetch("https://game-commerce.herokuapp.com/v1/user/signup", {
 					method: "POST",
 					body: JSON.stringify(data.value),
 					headers: {"Content-type": "application/json"}
@@ -213,7 +213,7 @@ const MyAccount = () => {
 					dispatch(logger('DELETE'))
 				}
 				if(btn == "confirm") {
-					fetch(`http://localhost:4000/v1/user/delete/${getUserData().user.id}`, {
+					fetch(`https://game-commerce.herokuapp.com/v1/user/delete/${getUserData().user.id}`, {
 						method: "DELETE",
 					}).then(r=>r.json()).then(r => {
 						Swal2.fire({

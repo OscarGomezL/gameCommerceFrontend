@@ -55,7 +55,7 @@ export default function gameCart({index,game}) {
 							UserObj.user.gamesCart[index][0].quantity = parseInt(e.target.value) 
 							dispatch(logger('PATCH',UserObj))
 
-							fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
+							fetch(`https://game-commerce.herokuapp.com/v1/user/update/${UserObj.user.id}`, {
 								method: "PATCH",
 								headers: {
 									"content-type": "application/json",
@@ -71,7 +71,7 @@ export default function gameCart({index,game}) {
 							UserObj.user.gamesCart.splice(index, 1, "")
 							dispatch(logger('PATCH',UserObj))
 							let gamesCart = UserObj.user.gamesCart.filter(el => el !== "")
-							fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
+							fetch(`https://game-commerce.herokuapp.com/v1/user/update/${UserObj.user.id}`, {
 								method: "PATCH",
 								headers: {
 									"content-type": "application/json",

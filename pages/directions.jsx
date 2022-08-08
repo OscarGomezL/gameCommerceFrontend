@@ -63,7 +63,7 @@ export default function Directions() {
 					UserObj.user.directions.push([obj.value])
 					dispatch(logger('PATCH', UserObj))
 					let directions = UserObj.user.directions
-					fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
+					fetch(`https://game-commerce.herokuapp.com/v1/user/update/${UserObj.user.id}`, {
 						method: "PATCH",
 						headers: {
 							"content-type": "application/json",
@@ -103,7 +103,7 @@ export default function Directions() {
 													UserObj.user.directions.splice(index, 1)
 													dispatch(logger('PATCH',UserObj))
 													let directions = UserObj.user.directions
-													fetch(`http://localhost:4000/v1/user/update/${UserObj.user.id}`, {
+													fetch(`https://game-commerce.herokuapp.com/v1/user/update/${UserObj.user.id}`, {
 														method: "PATCH",
 														headers: {
 															"content-type": "application/json",
