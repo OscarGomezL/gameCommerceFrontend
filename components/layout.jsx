@@ -1,7 +1,7 @@
 import Header from "./Header/header"
 import Head from 'next/head'
 import Footer from "./Footer/footer"
-import Nav from "./Nav/Nav"
+import Nav from "./Nav/nav"
 
 export default function Layout({children, needsSearcher=false, platform = ""}) {
 	const isDs = platform.toLowerCase() == "ds" ? "content-ds" : ""

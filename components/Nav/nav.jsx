@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import MyAccount from './MyAccount'
+import MyAccount from './myAccount'
 
 export default function Nav() {
 	return (
