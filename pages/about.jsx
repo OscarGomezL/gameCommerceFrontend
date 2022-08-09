@@ -1,4 +1,4 @@
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCopy} from '@fortawesome/free-solid-svg-icons'
 import NonReactSwal from 'sweetalert2'

@@ -1,4 +1,4 @@
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import NonReactSwal from 'sweetalert2'
 import { getCountryDropList } from "../logic/return"
 import { mustLogin } from "../logic/mustLoginSwal"

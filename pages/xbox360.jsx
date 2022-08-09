@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 //swal
 import NonReactSwal from 'sweetalert2'
 import WithReactContent from 'sweetalert2-react-content'

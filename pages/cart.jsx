@@ -1,4 +1,4 @@
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import { useState, useEffect } from "react"
 //redux
 import { useSelector } from "react-redux"

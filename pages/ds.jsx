@@ -1,4 +1,4 @@
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import { useEffect } from "react"
 //swal
 import NonReactSwal from 'sweetalert2'
