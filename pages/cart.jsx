@@ -118,7 +118,7 @@ export default function Cart() {
 										})
 									}
 									Swal2.fire({
-										title:"You&apos;re about to be sent to the checkout",
+										title:"You're about to be sent to the checkout",
 										background: "var(--brown_3)",
 										html: `
 										<ul>
