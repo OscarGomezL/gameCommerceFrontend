@@ -1,9 +1,13 @@
 import Layout from "../components/layout"
 import Link from "next/link"
+import Head from 'next/head'
 
 export default function Home() {
 	return (
 		<div className='page'>
+			<Head>
+				<meta name="description" content="gameCommerce" />
+			</Head>
 			<Layout singlePage={false} needsSearcher={false}>
 				<main className="main-home">
 					<Link href='/wii'>
