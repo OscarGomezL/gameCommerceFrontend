@@ -6,14 +6,10 @@ export default function Nav() {
 		<nav>
 			<div className='nav-platforms-container nav-container'>
 				<Link href='/'>
-					<a>
-						Home
-					</a>
+					Home
 				</Link>
 				<Link href='/about'>
-					<a>
-						About
-					</a>
+					About
 				</Link>
 			</div>
 			<MyAccount/>

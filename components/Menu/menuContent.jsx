@@ -16,28 +16,22 @@ export default function MenuContent() {
 			</div>
 			<div className='link-container'>
 				<Link href="/user">
-					<a>
 						<div>
 							<FontAwesomeIcon icon={faIdCard}/>
 							Your Account Information
 						</div>
-					</a>
 				</Link>
 				<Link href="/cart">
-					<a>
 						<div>
 							<FontAwesomeIcon icon={faShoppingCart}/>
 							Cart
 						</div>
-					</a>
 				</Link>
 				<Link href="/directions">
-					<a>
 						<div>
 							<FontAwesomeIcon icon={faRoute}/>
 							Directions
 						</div>
-					</a>
 				</Link>
 					<a onClick={sendSuggestionsSwal}>
 						<div>
