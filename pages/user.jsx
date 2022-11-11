@@ -1,6 +1,5 @@
 import Layout from "../components/layout"
 import {useSelector} from 'react-redux'
-import { useEffect } from "react"
 
 export default function User() {
 	const log = useSelector(s=>s.log)
