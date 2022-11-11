@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {ReactElement, useEffect} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
 import NonReactSwal from 'sweetalert2'
@@ -12,13 +12,13 @@ export default function Searcher({needsSearcher, platform}) {
 	//redux
 	const dispatch = useDispatch()
 	
-	let input = <input 
+	let input:(string | ReactElement) = <input 
 					type="text" 
 					placeholder='Search a Game' 
 					className='gameSearcher'
 					onChange={e=> {dispatch(searcher(platform.toUpperCase(), e.target.value))} }
 				/>
-	let ico = <FontAwesomeIcon 
+	let ico:(string | ReactElement ) = <FontAwesomeIcon 
 				icon={faSearch}
 				className='searchIcon'
 				onClick={()=>{

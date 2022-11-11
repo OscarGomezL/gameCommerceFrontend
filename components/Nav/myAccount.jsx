@@ -31,7 +31,7 @@ const MyAccount = () => {
 			preConfirm: function() {
 				return new Promise((res,rej) =>{
 					const validateLoginField = (idNum, placeholder, email) => {
-						let inputValue = document.getElementById(`login-swal-input-${idNum}`).value
+						let inputValue = document.getElementById(`login-swal-input-${idNum}`).value 
 						if(inputValue){
 							if(email) {
 								if(!inputValue.includes('@')) Swal2.showValidationMessage('Non valid email direction')

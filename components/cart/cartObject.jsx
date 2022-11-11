@@ -12,7 +12,7 @@ export default function GameCart({index,game}) {
 	return (
 		<div className="cart-object" key={index}>
 			<div className="cart-object-selector">
-				<div 
+				<div
 					className={`checkbox-${index} checkbox marked`}
 					value={true}
 					onClick={()=>{

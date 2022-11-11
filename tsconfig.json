@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/index.jsx", "pages/ds.jsx", "pages/cart.jsx", "pages/about.jsx", "components/Nav/myAccount.jsx", "components/cart/cartObject.jsx", "pages/wii.jsx", "pages/xbox360.jsx"  ],
   "exclude": [
     "node_modules"
   ]

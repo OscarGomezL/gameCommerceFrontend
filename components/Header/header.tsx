@@ -12,6 +12,7 @@ export default function Header({needsSearcher, platform}) {
 			<Menu/>
 			<div className='imageContainer'>
 				<Image
+					alt='gameCommerce'
 					src={src}
 					width={80}
 					height={80}
