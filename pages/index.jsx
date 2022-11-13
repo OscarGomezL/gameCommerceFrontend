@@ -1,6 +1,11 @@
 import Layout from "../components/layout"
 import Link from "next/link"
 import Head from 'next/head'
+import Image from 'next/image'
+
+import Xbox360 from "../public/home/xbox.png"
+import Wii from "../public/home/wii.png"
+import Ds from "../public/home/ds.png"
 
 export default function Home() {
 	return (
@@ -10,9 +15,17 @@ export default function Home() {
 			</Head>
 			<Layout singlePage={false} needsSearcher={false}>
 				<main className="main-home">
-					<Link href='/wii'>
+					<Link 
+						href='/wii'
+						className="main_home_link"
+					>
 						<div className="home-link_content">
-							<img className="home-link_content-image" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Wii_console.png" alt="" />
+							<Image 
+								className="home-link_content-image"
+								src={Wii}
+								alt="wii"
+								priority={true}
+							/>
 							<div className="home-link_content-container_1">
 								<div className="home-link_content-container_1-text">
 									Wii
@@ -20,9 +33,17 @@ export default function Home() {
 							</div>
 						</div>
 					</Link>
-					<Link href='/xbox360'>
+					<Link
+						href='/xbox360'
+						className="main_home_link"
+					>
 						<div className="home-link_content">
-							<img className="home-link_content-image" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Xbox-360-Consoles-Infobox.png" alt="" />
+							<Image 
+								className="home-link_content-image"
+								src={Xbox360}
+								alt="xbox360"
+								priority={true}
+							/>
 							<div className="home-link_content-container_1">
 								<div className="home-link_content-container_1-text">
 									Xbox
@@ -30,9 +51,17 @@ export default function Home() {
 							</div>
 						</div>
 					</Link>
-					<Link href='/ds'>
+					<Link 
+						href='/ds'
+						className="main_home_link"
+					>
 						<div className="home-link_content">
-							<img className="home-link_content-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nintendo-DS-Lite-w-stylus.png/1200px-Nintendo-DS-Lite-w-stylus.png" alt="" />
+							<Image 
+								className="home-link_content-image"
+								src={Ds}
+								alt="Ds"
+								priority={true}
+							/>
 							<div className="home-link_content-container_1">
 								<div className="home-link_content-container_1-text">
 									Ds
