@@ -7,26 +7,28 @@
 	flex-wrap: wrap;
 	overflow: scroll;
 }
-.content img {
+.game_image {
 	border: 2px solid var(--brown_1);
 	width: 40%;
 	height: 50%;
 	margin: 3% 1%;
 }
-.content-ds img {
+.game_image_ds {
+	border: 2px solid var(--brown_1);
 	width: 90vw;
 	height: 90vw;
+	margin: 3% 1%;
 }
 /*General Landscape*/
 @media only screen and (orientation: landscape) {
-	.content img {
+	.game_image {
 		border: 2px solid var(--brown_1);
 		margin: 1% 0;
 		width: 18%;
 		height: 75%;
 		cursor: pointer;
 	}
-	.content-ds img {
+	.game_image_ds {
 		width: 28vw;
 		height: 28vw;
 	}
@@ -53,7 +55,7 @@
  
 /* iPads (portrait) */
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
-	.content img {
+	.game_image {
 		border: 2px solid var(--brown_1);
 		margin: 2% 1%;
 		width: 43%;
