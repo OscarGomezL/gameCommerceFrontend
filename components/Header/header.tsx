@@ -10,15 +10,12 @@ export default function Header({needsSearcher, platform}) {
 	return (
 		<header>
 			<Menu/>
-			<div className='imageContainer'>
-				<Image
-					alt='gameCommerce'
-					src={src}
-					width={80}
-					height={80}
-					className='headerIcon'
-				/>
-			</div>
+			<Image
+				alt='gameCommerce'
+				src={src}
+				priority={true}
+				className='headerIcon'
+			/>
 			<div className='titleContainer'>
 				<h1 className='title'>GameCommerce</h1>
 			</div>

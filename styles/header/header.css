@@ -14,13 +14,8 @@ header {
 .headerIcon {
 	pointer-events: none;
 	user-select: none;
-}
-.imageContainer {
-	display: flex;
-	align-items: center;
-	padding-left: 10px;
-	height: 100%;
-	width: 20%;
+	height: 7.7vh;
+	width: 7.7vh;
 }
 .titleContainer {
 	display: grid;
@@ -39,9 +34,9 @@ header {
 }
 /*mini iPad portrait*/
 @media screen and (min-width: 540px) and (max-width: 1000px)  {
-	.imageContainer {
-		padding-left: 20px;
-		width: 15%;
+	.headerIcon {
+		height: 10vh;
+		width: 10vh;
 	}
 	.titleContainer{
 		display: grid;
@@ -57,8 +52,9 @@ header {
 	.titleContainer {
 		width: 83%;
 	}
-	.imageContainer {
-		width: 7%;
+	.headerIcon {
+		height: 10vh;
+		width: 10vh;
 	}
 	.title {
 		font-size: 2rem;
@@ -70,6 +66,11 @@ header {
 	.titleContainer {
 		width: 60%;
 	}
+	.headerIcon {
+		padding-left: 10px;
+		height: 5vh;
+		width: 5vh;
+	}
 	.title {
 		font-size: 1.3rem;
 	}
@@ -79,8 +80,9 @@ header {
 	.titleContainer {
 		width: 85%;
 	}
-	.imageContainer {
-		width: 5%;
+	.headerIcon {
+		height: 10vh;
+		width: 10vh;
 	}
 	.title {
 		font-size: 1.8rem;
@@ -92,8 +94,9 @@ header {
 	.titleContainer {
 		width: 83%;
 	}
-	.imageContainer {
-		width: 7%;
+	.headerIcon {
+		height: 10vh;
+		width: 10vh;
 	}
 	.title {
 		font-size: 3rem;
@@ -104,8 +107,9 @@ header {
 	.titleContainer {
 		width: 78%;
 	}
-	.imageContainer {
-		width: 13%;
+	.headerIcon {
+		height: 10vh;
+		width: 10vh;
 	}
 	.title {
 		font-size: 4rem;
@@ -118,8 +122,10 @@ header {
  
 /* Desktops and Laptops */	
 @media screen and (min-width: 1224px) and (max-width: 1824px){
-	.imageContainer {
-		width: 5%;
+	.headerIcon {
+		height: 10vh;
+		width: 10vh;
+		margin-left:20px;
 	}
 	.titleContainer{
 		display: flex;
