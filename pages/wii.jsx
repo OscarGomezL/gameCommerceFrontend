@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import Layout from "../components/layout"
+import Image from 'next/image'
 //swal
 import NonReactSwal from 'sweetalert2'
 import WithReactContent from 'sweetalert2-react-content'
@@ -98,9 +99,12 @@ export default function Wii({data}) {
 					.map(game=>{
 						if(game.console == "Wii") {
 							return (
-								<img 
+								<Image 
 									src={game.logo}
 									key={game._id}
+									className='game_image'
+									width={650}
+									height={450}
 									alt={game.name}
 									onClick={()=>{
 										GameSwal(

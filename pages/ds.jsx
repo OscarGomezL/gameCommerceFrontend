@@ -1,5 +1,6 @@
 import Layout from "../components/layout"
 import { useEffect } from "react"
+import Image from 'next/image'
 //swal
 import NonReactSwal from 'sweetalert2'
 import WithReactContent from 'sweetalert2-react-content'
@@ -97,9 +98,12 @@ export default function DS({data}) {
 					.map(game=>{
 						if(game.console=="Ds"){
 							return (
-								<img 
+								<Image
 									src={game.logo}
 									key={game._id}
+									className='game_image_ds'
+									width={650}
+									height={450}
 									alt={game.name}
 									onClick={
 										()=>{
