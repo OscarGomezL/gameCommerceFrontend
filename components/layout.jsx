@@ -3,19 +3,23 @@ import Head from 'next/head'
 import Footer from "./Footer/footer"
 import Nav from "./Nav/nav"
 
+import { Roboto_Slab } from '@next/font/google'
+const robotoSlab = Roboto_Slab()
+
 export default function Layout({children, needsSearcher=false, platform = ""}) {
 	const isDs = platform.toLowerCase() == "ds" ? "content-ds" : ""
 	return (
 		<div className="layout">
 			<Head>
-				<link rel="preconnect" href="https://fonts.googleapis.com"/>
-				<link rel="preconnect" href="https://fonts.gstatic.com"/>
-				<link 
-					href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:ital,wght@1,500&display=swap"
-					rel="stylesheet"
-				/>
 				<title>GameCommerce</title>
 			</Head>
+			<style jsx global>
+				{`
+					* {
+						font-family: ${robotoSlab.style.fontFamily};
+					}
+				`}
+			</style>
 			<Header needsSearcher={needsSearcher} platform={platform}/>
 			<Nav/>
 			<div className={`content ${isDs}`}>
