@@ -4,7 +4,7 @@ import Footer from "./Footer/footer"
 import Nav from "./Nav/nav"
 
 import { Roboto_Slab } from '@next/font/google'
-const robotoSlab = Roboto_Slab()
+const robotoSlab = Roboto_Slab({ subsets: ['latin'] })
 
 export default function Layout({children, needsSearcher=false, platform = ""}) {
 	const isDs = platform.toLowerCase() == "ds" ? "content-ds" : ""
